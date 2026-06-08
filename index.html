@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVOLXION — Plan Estratégico | FOCUS Consulting Group</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00E5FF;
+            --primary-dark: #00B8D4;
+            --accent: #7C4DFF;
+            --bg-dark: #0a0e1a;
+            --bg-card: #111827;
+            --bg-card-2: #1a2236;
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+            --gradient-1: linear-gradient(135deg, #00E5FF, #7C4DFF);
+            --gradient-2: linear-gradient(135deg, #0a0e1a, #1a2236);
+            --border: rgba(0, 229, 255, 0.15);
+            --glow: 0 0 20px rgba(0, 229, 255, 0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+        /* HEADER */
+        .header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: rgba(10, 14, 26, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 100;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .header-brand img {
+            height: 40px;
+        }
+        .header-badge {
+            background: var(--gradient-1);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .header-meta {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* HERO */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 229, 255, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-tag {
+            display: inline-block;
+            background: rgba(0, 229, 255, 0.1);
+            border: 1px solid var(--border);
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero p {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        .hero-stat {
+            text-align: center;
+        }
+        .hero-stat-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .hero-stat-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* SECTIONS */
+        .section {
+            padding: 60px 0;
+            border-top: 1px solid var(--border);
+        }
+        .section-header {
+            margin-bottom: 40px;
+        }
+        .section-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .section-subtitle {
+            font-size: 16px;
+            color: var(--text-muted);
+            max-width: 700px;
+        }
+
+        /* CARDS */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            border-color: rgba(0, 229, 255, 0.3);
+            box-shadow: var(--glow);
+            transform: translateY(-2px);
+        }
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+        .card p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        /* GRID */
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+
+        /* FUNNEL DIAGRAM */
+        .funnel-container {
+            position: relative;
+            padding: 40px 0;
+        }
+        .funnel-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            margin-bottom: 0;
+            padding: 24px 0;
+            position: relative;
+            opacity: 0;
+            transform: translateX(-30px);
+            animation: slideIn 0.6s ease forwards;
+        }
+        .funnel-step:nth-child(1) { animation-delay: 0.1s; }
+        .funnel-step:nth-child(2) { animation-delay: 0.3s; }
+        .funnel-step:nth-child(3) { animation-delay: 0.5s; }
+        .funnel-step:nth-child(4) { animation-delay: 0.7s; }
+        .funnel-step:nth-child(5) { animation-delay: 0.9s; }
+        .funnel-step:nth-child(6) { animation-delay: 1.1s; }
+        .funnel-step:nth-child(7) { animation-delay: 1.3s; }
+
+        @keyframes slideIn {
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .funnel-icon {
+            width: 56px;
+            height: 56px;
+            min-width: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: 700;
+            background: var(--gradient-1);
+            color: #000;
+            position: relative;
+            z-index: 2;
+        }
+        .funnel-line {
+            position: absolute;
+            left: 51px;
+            top: 80px;
+            width: 2px;
+            height: calc(100% - 56px);
+            background: linear-gradient(to bottom, var(--primary), transparent);
+        }
+        .funnel-content {
+            flex: 1;
+            padding-top: 4px;
+        }
+        .funnel-content h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .funnel-content p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* ANIMATED FUNNEL VISUAL */
+        .funnel-visual {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .funnel-visual::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(0, 229, 255, 0.03), transparent);
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate {
+            to { transform: rotate(360deg); }
+        }
+        .funnel-bars {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            position: relative;
+            z-index: 1;
+        }
+        .funnel-bar {
+            height: 48px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 600;
+            color: #fff;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: expandBar 1s ease forwards;
+            opacity: 0;
+        }
+        .funnel-bar:nth-child(1) { width: 100%; background: linear-gradient(90deg, #00E5FF, #00B8D4); animation-delay: 0.2s; }
+        .funnel-bar:nth-child(2) { width: 85%; background: linear-gradient(90deg, #00B8D4, #0097A7); animation-delay: 0.4s; }
+        .funnel-bar:nth-child(3) { width: 70%; background: linear-gradient(90deg, #0097A7, #00796B); animation-delay: 0.6s; }
+        .funnel-bar:nth-child(4) { width: 55%; background: linear-gradient(90deg, #00796B, #7C4DFF); animation-delay: 0.8s; }
+        .funnel-bar:nth-child(5) { width: 40%; background: linear-gradient(90deg, #7C4DFF, #651FFF); animation-delay: 1.0s; }
+        .funnel-bar:nth-child(6) { width: 28%; background: linear-gradient(90deg, #651FFF, #6200EA); animation-delay: 1.2s; }
+
+        @keyframes expandBar {
+            from { opacity: 0; transform: scaleX(0); }
+            to { opacity: 1; transform: scaleX(1); }
+        }
+
+        .funnel-bar:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 20px rgba(0, 229, 255, 0.3);
+        }
+
+        /* PULSE ANIMATION */
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        /* VSL SECTION */
+        .vsl-box {
+            background: var(--bg-card-2);
+            border: 2px solid var(--primary);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 30px 0;
+            position: relative;
+        }
+        .vsl-box::before {
+            content: 'GUIÓN VSL';
+            position: absolute;
+            top: -12px;
+            left: 24px;
+            background: var(--primary);
+            color: #000;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 4px;
+            letter-spacing: 1px;
+        }
+        .vsl-timestamp {
+            font-size: 11px;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 4px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .vsl-line {
+            margin-bottom: 16px;
+            padding-left: 16px;
+            border-left: 2px solid rgba(0, 229, 255, 0.2);
+        }
+        .vsl-line p {
+            font-size: 15px;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        .vsl-direction {
+            font-style: italic;
+            color: var(--accent) !important;
+            font-size: 13px !important;
+        }
+
+        /* AD SCRIPTS */
+        .ad-script {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        .ad-script::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-1);
+        }
+        .ad-target {
+            display: inline-block;
+            background: rgba(124, 77, 255, 0.15);
+            color: var(--accent);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .ad-hook {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+        .ad-body {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+        .ad-cta {
+            display: inline-block;
+            margin-top: 16px;
+            background: var(--gradient-1);
+            color: #000;
+            font-weight: 700;
+            font-size: 13px;
+            padding: 10px 24px;
+            border-radius: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* OFFER TABLE */
+        .offer-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        .offer-table th {
+            background: rgba(0, 229, 255, 0.1);
+            color: var(--primary);
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+        .offer-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            color: var(--text-muted);
+        }
+        .offer-table tr:hover td {
+            background: rgba(0, 229, 255, 0.03);
+        }
+
+        /* QUIZ PAGE SECTION */
+        .quiz-mockup {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            max-width: 500px;
+            margin: 30px auto;
+        }
+        .quiz-question {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+        .quiz-option {
+            display: block;
+            background: rgba(0, 229, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: var(--text);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .quiz-option:hover {
+            border-color: var(--primary);
+            background: rgba(0, 229, 255, 0.1);
+        }
+        .quiz-progress {
+            height: 4px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            margin-bottom: 24px;
+            overflow: hidden;
+        }
+        .quiz-progress-bar {
+            height: 100%;
+            background: var(--gradient-1);
+            border-radius: 4px;
+            width: 40%;
+            transition: width 0.5s ease;
+        }
+
+        /* RECORDING CHECKLIST */
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        .checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 15px;
+            color: var(--text-muted);
+        }
+        .checklist li::before {
+            content: '▶';
+            color: var(--primary);
+            font-size: 12px;
+            margin-top: 3px;
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            padding: 80px 0;
+            position: relative;
+        }
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(124, 77, 255, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: var(--gradient-1);
+            color: #000;
+            font-weight: 700;
+            font-size: 16px;
+            padding: 18px 48px;
+            border-radius: 12px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 30px rgba(0, 229, 255, 0.3);
+        }
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 40px rgba(0, 229, 255, 0.5);
+        }
+
+        /* FOOTER */
+        .footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        .footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* HIGHLIGHT BOX */
+        .highlight-box {
+            background: rgba(0, 229, 255, 0.05);
+            border-left: 4px solid var(--primary);
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 20px 0;
+        }
+        .highlight-box p {
+            font-size: 15px;
+            color: var(--text);
+            font-style: italic;
+        }
+        .highlight-box .attribution {
+            font-size: 13px;
+            color: var(--primary);
+            margin-top: 8px;
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        /* COMPARISON */
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .comparison-bad {
+            background: rgba(239, 68, 68, 0.05);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            border-radius: 16px;
+            padding: 24px;
+        }
+        .comparison-good {
+            background: rgba(0, 229, 255, 0.05);
+            border: 1px solid rgba(0, 229, 255, 0.2);
+            border-radius: 16px;
+            padding: 24px;
+        }
+        .comparison h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .comparison-bad h4 { color: #ef4444; }
+        .comparison-good h4 { color: var(--primary); }
+        .comparison ul {
+            list-style: none;
+            padding: 0;
+        }
+        .comparison li {
+            font-size: 14px;
+            color: var(--text-muted);
+            padding: 6px 0;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .comparison { grid-template-columns: 1fr; }
+            .hero-stats { gap: 24px; }
+            .funnel-step { gap: 16px; }
+            .funnel-icon { width: 44px; height: 44px; min-width: 44px; font-size: 16px; }
+            .funnel-line { left: 43px; }
+        }
+
+        /* LINK FATHOM */
+        .fathom-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 229, 255, 0.08);
+            border: 1px solid var(--border);
+            padding: 10px 20px;
+            border-radius: 10px;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        .fathom-link:hover {
+            background: rgba(0, 229, 255, 0.15);
+            border-color: var(--primary);
+        }
+
+        /* TAGS */
+        .tag {
+            display: inline-block;
+            background: rgba(124, 77, 255, 0.1);
+            color: var(--accent);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="container header-inner">
+        <div class="header-brand">
+            <img src="https://experience.evolxion.com/manus-storage/evolxion-logo_4c83cefe.webp" alt="EVOLXION" onerror="this.outerHTML='<span style=font-family:Space+Grotesk;font-weight:800;font-size:20px;color:#00E5FF>EVOLXION</span>'">
+            <span class="header-badge">Focus Consulting</span>
+        </div>
+        <div class="header-meta">8 Junio 2026 · 83 min</div>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <span class="hero-tag">Sesión Estratégica</span>
+        <h1>EVOLXION — Plan de Crecimiento y Embudo de Ventas</h1>
+        <p>Estrategia completa para escalar la captación de instructores y clientes de membresía a través de embudos automatizados, VSL y quiz page.</p>
+        <a href="https://fathom.video/share/mYPW89UbHFMHkoy4-yxydJDJKTqpVVA8" target="_blank" class="fathom-link">
+            ▶ Ver grabación completa en Fathom
+        </a>
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <div class="hero-stat-value">83 min</div>
+                <div class="hero-stat-label">Duración</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-value">2 Embudos</div>
+                <div class="hero-stat-label">Diseñados</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-value">$247</div>
+                <div class="hero-stat-label">Ticket Instructor</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-value">6 Países</div>
+                <div class="hero-stat-label">Presencia</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECCIÓN 1: CONTEXTO -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number">01 — Contexto de la Empresa</div>
+            <h2 class="section-title">EVOLXION: Baile Fitness Emocional + Formación de Instructores</h2>
+            <p class="section-subtitle">Una marca internacional de fitness que combina movimiento, desarrollo personal y comunidad.</p>
+        </div>
+
+        <div class="grid-2">
+            <div class="card">
+                <div class="card-title">El Negocio</div>
+                <p><strong>Rody</strong> lleva 8 años en el sector del baile fitness. En diciembre 2025 rompió con su ex-socio, cambió el nombre de la marca a <strong>EVOLXION</strong> y empezó de cero con las redes (que eran suyas). Desde enero 2026 ha construido todo: web, formación, plataforma en Systeme.io, contenido en 6 idiomas con HeyGen.</p>
+            </div>
+            <div class="card">
+                <div class="card-title">Situación Actual</div>
+                <p>Todo orgánico, <strong>0€ invertidos en publicidad</strong>. Factura ~1.018$/mes en Facebook (creciendo a 2.000$). Tiene instructores formándose en España, Alemania, Brasil y Francia. Opera solo: edita, graba, vende, da soporte. Trabaja en Cartagena, Murcia y Alicante.</p>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <p>"Yo entré aquí buscando a alguien que me ayude porque me estoy dejando la piel en todo esto. Son las 3 de la mañana y yo estoy editando vídeos, haciendo todo al mismo tiempo."</p>
+            <div class="attribution">— Rody (EVOLXION)</div>
+        </div>
+
+        <table class="offer-table">
+            <thead>
+                <tr>
+                    <th>Dato</th>
+                    <th>Detalle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Ubicación</td><td>Los Alcázares (Murcia), opera en Cartagena, Murcia y Alicante</td></tr>
+                <tr><td>Plataforma</td><td>Systeme.io (formación + membresía)</td></tr>
+                <tr><td>Idiomas</td><td>6 idiomas (ES, EN, DE, FR, PT, IT) — con HeyGen</td></tr>
+                <tr><td>Inversión en ads</td><td>0€ hasta la fecha — todo orgánico</td></tr>
+                <tr><td>Ingresos Facebook</td><td>~1.018$/mes (proyección 2.000$/mes)</td></tr>
+                <tr><td>Metodología</td><td>SHT: Ser → Hacer → Tener</td></tr>
+                <tr><td>Diferencial</td><td>No solo baile: desarrollo personal + liderazgo + negocio completo</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- SECCIÓN 2: PROBLEMAS IDENTIFICADOS -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number">02 — Diagnóstico</div>
+            <h2 class="section-title">Problemas Identificados en la Sesión</h2>
+            <p class="section-subtitle">Puntos críticos que frenan el crecimiento y que se resuelven con la estrategia propuesta.</p>
+        </div>
+
+        <div class="grid-2">
+            <div class="card">
+                <div class="card-title">Captación sin filtro</div>
+                <p>La gente llega por Stories/WhatsApp, pregunta mucho, y cuando se dice el precio desaparece. No hay cualificación previa. Se pierde tiempo con "morralla".</p>
+            </div>
+            <div class="card">
+                <div class="card-title">Sin CRM ni automatización</div>
+                <p>Los datos de leads se pierden porque no están conectados a ningún CRM. Todo se gestiona manualmente por WhatsApp.</p>
+            </div>
+            <div class="card">
+                <div class="card-title">Orden de comunicación invertido</div>
+                <p>Se lidera con "desarrollo personal" cuando el público frío quiere MOVERSE y BAILAR. El desarrollo personal debe ser el bonus, no el gancho.</p>
+            </div>
+            <div class="card">
+                <div class="card-title">Operación unipersonal</div>
+                <p>Rody hace absolutamente todo solo: contenido, edición, ventas, soporte, formación. No puede escalar sin automatizar primero.</p>
+            </div>
+        </div>
+
+        <div class="comparison">
+            <div class="comparison-bad">
+                <h4>Antes (Problema)</h4>
+                <ul>
+                    <li>❌ Venta manual por Stories</li>
+                    <li>❌ WhatsApp sin cualificar</li>
+                    <li>❌ Datos perdidos sin CRM</li>
+                    <li>❌ Liderar con desarrollo personal</li>
+                    <li>❌ Web en 6 idiomas sin validar</li>
+                    <li>❌ Sin financiación para clientes</li>
+                </ul>
+            </div>
+            <div class="comparison-good">
+                <h4>Después (Solución)</h4>
+                <ul>
+                    <li>✓ Embudo automatizado con ads</li>
+                    <li>✓ Quiz Page que filtra morralla</li>
+                    <li>✓ CRM + GoHighLevel</li>
+                    <li>✓ Liderar con BAILE + ENERGÍA</li>
+                    <li>✓ Validar primero en español</li>
+                    <li>✓ Financiación a 15€/mes</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <p>"Si tú le dices desarrollo personal a una tía que está jodida de 37 años, le viene todo de muy golpe. Ella quiere moverse, sácala de ahí. Y después, si le metes el desarrollo, de puta madre. Pero no cambies el orden de los factores."</p>
+            <div class="attribution">— Adrián Lucena (Lucenathor)</div>
+        </div>
+    </div>
+</section>
+
+<!-- SECCIÓN 3: EMBUDO ANIMADO -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number">03 — Embudo de Ventas</div>
+            <h2 class="section-title">Arquitectura del Embudo — Doble Vía</h2>
+            <p class="section-subtitle">Dos embudos paralelos: uno para captar clientes de membresía y otro para reclutar instructores certificados.</p>
+        </div>
+
+        <!-- FUNNEL VISUAL ANIMADO -->
+        <div class="funnel-visual">
+            <h3 style="text-align:center; font-family:'Space Grotesk'; font-size:18px; margin-bottom:30px; color:#fff; position:relative; z-index:1;">Embudo Instructor EVOLXION — Flujo Completo</h3>
+            <div class="funnel-bars">
+                <div class="funnel-bar">ANUNCIO META/TIKTOK → Audiencia propia de la marca</div>
+                <div class="funnel-bar">LANDING + VSL → Video de 2-3 min (Rody como cara)</div>
+                <div class="funnel-bar">QUIZ PAGE → Cualificación automática (5 preguntas)</div>
+                <div class="funnel-bar">FORMULARIO → Datos + WhatsApp + inversión</div>
+                <div class="funnel-bar">WHATSAPP BOT → Seguimiento automatizado</div>
+                <div class="funnel-bar">CIERRE → 247€ / financiado a 15€/mes</div>
+            </div>
+        </div>
+
+        <!-- EMBUDO INSTRUCTOR DETALLADO -->
+        <h3 style="font-family:'Space Grotesk'; font-size:20px; font-weight:600; margin: 40px 0 20px; color: var(--primary);">A) Embudo para Instructores (247€)</h3>
+
+        <div class="funnel-container">
+            <div class="funnel-step">
+                <div class="funnel-icon">1</div>
+                <div class="funnel-line"></div>
+                <div class="funnel-content">
+                    <h4>Anuncio Meta/TikTok</h4>
+                    <p>Dirigido a la audiencia propia de EVOLXION. Copy: "¿Te gustaría ser instructor de EVOLXION?" Segmentación: seguidores de la marca + lookalike. Formato: video corto con energía de clase real.</p>
+                </div>
+            </div>
+            <div class="funnel-step">
+                <div class="funnel-icon">2</div>
+                <div class="funnel-line"></div>
+                <div class="funnel-content">
+                    <h4>Landing Page + VSL</h4>
+                    <p>Video de 2-3 minutos con Rody como cara principal. Muestra la transformación de instructores reales, el sistema completo y la oportunidad de negocio. Content Locker tras el VSL.</p>
+                </div>
+            </div>
+            <div class="funnel-step">
+                <div class="funnel-icon">3</div>
+                <div class="funnel-line"></div>
+                <div class="funnel-content">
+                    <h4>Quiz Page (Cualificación)</h4>
+                    <p>5 preguntas que filtran: experiencia previa, zona geográfica, idioma, disponibilidad, capacidad de inversión. Elimina la "morralla" antes de llegar a WhatsApp.</p>
+                </div>
+            </div>
+            <div class="funnel-step">
+                <div class="funnel-icon">4</div>
+                <div class="funnel-line"></div>
+                <div class="funnel-content">
+                    <h4>Formulario de Datos</h4>
+                    <p>Nombre, email, WhatsApp, país, experiencia. Conectado directamente al CRM (GoHighLevel) para no perder ningún dato.</p>
+                </div>
+            </div>
+            <div class="funnel-step">
+                <div class="funnel-icon">5</div>
+                <div class="funnel-line"></div>
+                <div class="funnel-content">
+                    <h4>WhatsApp Automatizado</h4>
+                    <p>Bot de WhatsApp que da seguimiento, resuelve dudas frecuentes y agenda llamada de cierre. Solo llegan leads cualificados por el quiz.</p>
+                </div>
+            </div>
+            <div class="funnel-step">
+                <div class="funnel-icon">6</div>
+                <div class="funnel-content">
+                    <h4>Cierre de Venta</h4>
+                    <p>Precio: 247€ (Europa/EEUU) o 80 USD (LATAM). Con opción de financiación a 15-20€/mes para eliminar la barrera de entrada.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- EMBUDO CLIENTE -->
+        <h3 style="font-family:'Space Grotesk'; font-size:20px; font-weight:600; margin: 50px 0 20px; color: var(--primary);">B) Embudo para Cliente Final (Membresía $100/año)</h3>
+
+        <div class="funnel-container">
+            <div class="funnel-step">
+                <div class="funnel-icon">1</div>
+                <div class="funnel-line"></div>
+                <div class="funnel-content">
+                    <h4>Contenido Orgánico + Anuncio</h4>
+                    <p>TikTok/Reels con energía de clase real. Hook emocional: "Quizás lo que necesitas no es otro entrenamiento. Necesitas volver a conectar contigo." Rody como cara.</p>
+                </div>
+            </div>
+            <div class="funnel-step">
+                <div class="funnel-icon">2</div>
+                <div class="funnel-line"></div>
+                <div class="funnel-content">
+                    <h4>Landing + VSL (ya existe)</h4>
+                    <p>experience.evolxion.com — VSL con testimonio de Elena. Mensaje: experiencia emocional a través del movimiento. Content Locker activo.</p>
+                </div>
+            </div>
+            <div class="funnel-step">
+                <div class="funnel-icon">3</div>
+                <div class="funnel-line"></div>
+                <div class="funnel-content">
+                    <h4>Quiz Page de Cualificación</h4>
+                    <p>Preguntas: objetivo principal, frecuencia deseada, experiencia previa, qué ha probado antes, inversión mensual dispuesta.</p>
+                </div>
+            </div>
+            <div class="funnel-step">
+                <div class="funnel-icon">4</div>
+                <div class="funnel-line"></div>
+                <div class="funnel-content">
+                    <h4>Oferta + Pago</h4>
+                    <p>Plan Anual: $100/año (ahorra $44) — Plan Mensual: $12/mes. Priorizar pago anual. Financiación disponible.</p>
+                </div>
+            </div>
+            <div class="funnel-step">
+                <div class="funnel-icon">5</div>
+                <div class="funnel-content">
+                    <h4>Onboarding + Comunidad</h4>
+                    <p>Acceso inmediato a Systeme.io + grupo WhatsApp privado + primera sesión EMOXION. Retención mediante comunidad y contenido semanal nuevo.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECCIÓN 4: OFERTA IRRESISTIBLE -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number">04 — Oferta Irresistible</div>
+            <h2 class="section-title">Stack de Valor — Instructor EVOLXION</h2>
+            <p class="section-subtitle">La oferta mejorada que justifica los 247€ y destruye la comparación con Zumba.</p>
+        </div>
+
+        <div class="comparison">
+            <div class="comparison-bad">
+                <h4>Zumba (Competencia)</h4>
+                <ul>
+                    <li>❌ Formación de un fin de semana</li>
+                    <li>❌ Te certifican y ya está</li>
+                    <li>❌ Cada quien se monta su coreografía</li>
+                    <li>❌ Sin soporte posterior</li>
+                    <li>❌ Sin marketing ni negocio</li>
+                    <li>❌ Sin comunidad real</li>
+                </ul>
+            </div>
+            <div class="comparison-good">
+                <h4>EVOLXION (Nosotros)</h4>
+                <ul>
+                    <li>✓ Formación completa y profunda</li>
+                    <li>✓ 15 coreografías oficiales</li>
+                    <li>✓ Metodología exclusiva + manual</li>
+                    <li>✓ Marketing + IA + marca personal</li>
+                    <li>✓ Mini web propia (subdominio)</li>
+                    <li>✓ Anuncios ya probados incluidos</li>
+                    <li>✓ Mentorías grupales en vivo</li>
+                    <li>✓ Comunidad internacional</li>
+                    <li>✓ Licencia oficial</li>
+                </ul>
+            </div>
+        </div>
+
+        <table class="offer-table">
+            <thead>
+                <tr>
+                    <th>Componente</th>
+                    <th>Valor Percibido</th>
+                    <th>Coste Real</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Formación Oficial Completa</td><td>500€</td><td>Ya creado</td></tr>
+                <tr><td>15 Coreografías Oficiales</td><td>300€</td><td>Ya creado</td></tr>
+                <tr><td>Metodología Exclusiva EVOLXION</td><td>200€</td><td>Ya creado</td></tr>
+                <tr><td>Manual Profesional del Instructor</td><td>100€</td><td>Ya creado</td></tr>
+                <tr><td>Formación en Marca Personal</td><td>300€</td><td>Ya creado</td></tr>
+                <tr><td>Marketing, RRSS e IA</td><td>500€</td><td>Ya creado</td></tr>
+                <tr><td><strong>Mini Web Propia (subdominio)</strong></td><td><strong>500€</strong></td><td><strong>3 min en GHL</strong></td></tr>
+                <tr><td><strong>Anuncios Meta ya probados</strong></td><td><strong>300€</strong></td><td><strong>Ya los tienes</strong></td></tr>
+                <tr><td>Mentorías Grupales en Vivo</td><td>200€</td><td>1h/semana</td></tr>
+                <tr><td>Comunidad Internacional</td><td>150€</td><td>Grupo WhatsApp</td></tr>
+                <tr><td>Licencia Oficial de Instructor</td><td>200€</td><td>PDF/certificado</td></tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td><strong>TOTAL VALOR PERCIBIDO</strong></td>
+                    <td><strong style="color: var(--primary); font-size: 18px;">3.250€</strong></td>
+                    <td><strong>Precio: 247€</strong></td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div class="highlight-box">
+            <p>"Mientras Zumba te da una formación de mierda y te certifica en dos días, este tío te certifica, te da una web, te da anuncios, te da soporte, te da un sistema completo de negocio. Es imposible decirle que no."</p>
+            <div class="attribution">— Adrián Lucena (Lucenathor)</div>
+        </div>
+
+        <div class="card" style="margin-top: 30px;">
+            <div class="card-title">Bonus Clave: Mini Web con Subdominio</div>
+            <p>Cada instructor recibe su propia web: <strong>ruben.evolxion.com</strong>. Se crea en 3 minutos con GoHighLevel. No cuesta ni dominio ni hosting. Pero el instructor percibe un valor de 500€+. Es el elemento que más justifica el precio y diferencia de cualquier competencia.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SECCIÓN 5: VSL INSTRUCTOR -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number">05 — Guión VSL</div>
+            <h2 class="section-title">VSL para Captación de Instructores (2:30 min)</h2>
+            <p class="section-subtitle">Guión completo para grabar. Rody como cara principal. Formato directo a cámara + B-roll de clases reales.</p>
+        </div>
+
+        <div class="vsl-box">
+            <div class="vsl-line">
+                <div class="vsl-timestamp">0:00 — 0:15 | HOOK</div>
+                <p><strong>"¿Eres instructor de fitness y sientes que estás estancado? ¿Cobras 15 euros por clase y no sabes cómo salir de ahí?"</strong></p>
+                <p class="vsl-direction">[Rody directo a cámara, energía alta, plano medio]</p>
+            </div>
+            <div class="vsl-line">
+                <div class="vsl-timestamp">0:15 — 0:35 | PROBLEMA</div>
+                <p>"Mira, yo he estado exactamente donde tú estás. Dando clases por cuatro duros, sin sistema, sin marca, dependiendo de un gimnasio que te puede echar mañana. Y lo peor: sin saber cómo captar tus propios clientes."</p>
+                <p class="vsl-direction">[B-roll: gimnasio vacío, instructor solo]</p>
+            </div>
+            <div class="vsl-line">
+                <div class="vsl-timestamp">0:35 — 1:00 | TRANSICIÓN</div>
+                <p>"Pero, ¿y si te dijera que hay una forma de tener tu propia marca, tu propia web, tus propios anuncios funcionando, una comunidad internacional detrás de ti... y todo eso por menos de lo que pagas de gasolina al mes?"</p>
+                <p class="vsl-direction">[Transición a B-roll de clase EVOLXION con energía, gente bailando]</p>
+            </div>
+            <div class="vsl-line">
+                <div class="vsl-timestamp">1:00 — 1:45 | SOLUCIÓN</div>
+                <p>"EVOLXION no es una certificación más. Es un sistema completo de negocio. Te damos 15 coreografías oficiales, una metodología probada, formación en marketing y redes sociales, tu propia web con tu nombre, anuncios que ya están funcionando para que los uses tú, mentorías en vivo, y una comunidad internacional de instructores que se apoyan entre sí."</p>
+                <p class="vsl-direction">[Mostrar cada elemento visualmente: web, anuncios, comunidad, coreografías]</p>
+            </div>
+            <div class="vsl-line">
+                <div class="vsl-timestamp">1:45 — 2:10 | PRUEBA SOCIAL</div>
+                <p>"Ya tenemos instructores en España, Alemania, Brasil y Francia. Gente que empezó sin nada y hoy tiene 20.000, 30.000 seguidores. Gente que pasó de cobrar 15 euros a tener su propio negocio digital."</p>
+                <p class="vsl-direction">[Testimonios cortos de instructores reales, capturas de seguidores]</p>
+            </div>
+            <div class="vsl-line">
+                <div class="vsl-timestamp">2:10 — 2:30 | CTA</div>
+                <p>"Si esto resuena contigo, haz clic abajo y responde unas preguntas rápidas. No es para todo el mundo — buscamos personas comprometidas que quieran liderar, no solo dar clases. ¿Eres tú? Demuéstralo."</p>
+                <p class="vsl-direction">[Rody señala abajo, energía alta, música sube, corte a negro con logo EVOLXION]</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Notas de Producción</div>
+            <p><strong>Duración:</strong> 2:30 máximo | <strong>Formato:</strong> Vertical (9:16) para TikTok/Reels + Horizontal (16:9) para landing | <strong>Ubicación:</strong> Gimnasio de Murcia (sala de clases) | <strong>Ropa:</strong> Marca EVOLXION visible | <strong>Música:</strong> Energética, baja al inicio (problema) y sube en la solución | <strong>Subtítulos:</strong> Obligatorios, estilo EVOLXION (cyan sobre negro)</p>
+        </div>
+    </div>
+</section>
+
+<!-- SECCIÓN 6: VSL CLIENTE -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number">06 — Guión VSL</div>
+            <h2 class="section-title">VSL para Cliente Final — Membresía (2:00 min)</h2>
+            <p class="section-subtitle">Ya existe un VSL con Elena. Este es el guión optimizado para anuncios cortos que lleven a la landing.</p>
+        </div>
+
+        <div class="vsl-box">
+            <div class="vsl-line">
+                <div class="vsl-timestamp">0:00 — 0:10 | HOOK</div>
+                <p><strong>"Llevas meses pensando en empezar. Mañana empiezo, el lunes empiezo, después del verano empiezo. ¿Y si hoy fuera ese día?"</strong></p>
+                <p class="vsl-direction">[Mujer real mirando el móvil en el sofá, transición a clase EVOLXION]</p>
+            </div>
+            <div class="vsl-line">
+                <div class="vsl-timestamp">0:10 — 0:30 | DOLOR</div>
+                <p>"No es que no quieras cuidarte. No es que te falte motivación. Lo que te falta es algo que encaje con tu vida real. Que no dependas de si estás motivada hoy o mañana. Algo tan sencillo que no tengas ni que pensarlo."</p>
+                <p class="vsl-direction">[B-roll: rutina diaria, trabajo, hijos, cansancio]</p>
+            </div>
+            <div class="vsl-line">
+                <div class="vsl-timestamp">0:30 — 1:10 | SOLUCIÓN</div>
+                <p>"EVOLXION Experience no es una clase de fitness más. Es una experiencia emocional a través del movimiento. Aquí no se viene a hacer lo perfecto — se viene a evolucionar. A recuperar la confianza, a liberar energía, a volver a sentir que sí puedes. Desde tu casa, a tu ritmo, con una comunidad internacional que te acompaña."</p>
+                <p class="vsl-direction">[Montaje de clases reales, gente sonriendo, sudando, bailando]</p>
+            </div>
+            <div class="vsl-line">
+                <div class="vsl-timestamp">1:10 — 1:40 | PRUEBA</div>
+                <p>"Personas de España, México, Argentina, Alemania ya están evolucionando juntas. No importa tu edad, no importa de dónde vienes. Lo que importa es hacia dónde quieres ir."</p>
+                <p class="vsl-direction">[Testimonios rápidos: Elena + 2 más, banderas de países]</p>
+            </div>
+            <div class="vsl-line">
+                <div class="vsl-timestamp">1:40 — 2:00 | CTA</div>
+                <p>"Tu evolución puede comenzar hoy. Por menos de lo que cuesta un café a la semana. Haz clic, responde unas preguntas rápidas y descubre si EVOLXION es para ti."</p>
+                <p class="vsl-direction">[Logo EVOLXION, botón CTA animado, música alta]</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECCIÓN 7: QUIZ PAGE -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number">07 — Quiz Page</div>
+            <h2 class="section-title">Diseño del Quiz de Cualificación</h2>
+            <p class="section-subtitle">El quiz filtra la "morralla" antes de que llegue a WhatsApp. Solo pasan leads cualificados.</p>
+        </div>
+
+        <div class="grid-2">
+            <div>
+                <h3 style="font-family:'Space Grotesk'; font-size:18px; font-weight:600; margin-bottom:20px; color:var(--primary);">Quiz Instructor (5 preguntas)</h3>
+                <div class="card">
+                    <p><strong>P1:</strong> ¿Tienes experiencia como instructor/a de fitness o baile?</p>
+                    <p style="margin-top:8px; font-size:13px;">→ Sí, más de 2 años / Sí, menos de 2 años / No, pero quiero empezar</p>
+                </div>
+                <div class="card">
+                    <p><strong>P2:</strong> ¿En qué país te encuentras?</p>
+                    <p style="margin-top:8px; font-size:13px;">→ España / Latinoamérica / Europa / EEUU / Otro</p>
+                </div>
+                <div class="card">
+                    <p><strong>P3:</strong> ¿Qué es lo que más te interesa de ser instructor EVOLXION?</p>
+                    <p style="margin-top:8px; font-size:13px;">→ Tener mi propio negocio / Las coreografías / La comunidad / Todo</p>
+                </div>
+                <div class="card">
+                    <p><strong>P4:</strong> ¿Cuántas horas semanales puedes dedicar a formarte?</p>
+                    <p style="margin-top:8px; font-size:13px;">→ Menos de 3h / 3-5h / 5-10h / Más de 10h</p>
+                </div>
+                <div class="card">
+                    <p><strong>P5:</strong> Si el programa encaja contigo, ¿podrías invertir entre 15-20€/mes en tu formación?</p>
+                    <p style="margin-top:8px; font-size:13px;">→ Sí, sin problema / Tendría que pensarlo / No en este momento</p>
+                </div>
+            </div>
+            <div>
+                <h3 style="font-family:'Space Grotesk'; font-size:18px; font-weight:600; margin-bottom:20px; color:var(--primary);">Quiz Cliente (4 preguntas)</h3>
+                <div class="card">
+                    <p><strong>P1:</strong> ¿Cuál es tu objetivo principal ahora mismo?</p>
+                    <p style="margin-top:8px; font-size:13px;">→ Sentirme mejor conmigo / Perder peso / Tener más energía / Conectar con gente</p>
+                </div>
+                <div class="card">
+                    <p><strong>P2:</strong> ¿Has intentado entrenar antes y lo dejaste?</p>
+                    <p style="margin-top:8px; font-size:13px;">→ Sí, varias veces / Sí, una vez / No, es mi primera vez</p>
+                </div>
+                <div class="card">
+                    <p><strong>P3:</strong> ¿Cuántos días a la semana podrías dedicar a moverte?</p>
+                    <p style="margin-top:8px; font-size:13px;">→ 1-2 días / 3-4 días / 5+ días</p>
+                </div>
+                <div class="card">
+                    <p><strong>P4:</strong> Si encontraras algo que realmente encaje contigo, ¿podrías invertir menos de 10€/mes?</p>
+                    <p style="margin-top:8px; font-size:13px;">→ Sí, totalmente / Depende de lo que incluya / No ahora mismo</p>
+                </div>
+
+                <!-- MOCKUP QUIZ -->
+                <div class="quiz-mockup" style="margin-top:30px;">
+                    <div style="text-align:center; margin-bottom:16px;">
+                        <img src="https://experience.evolxion.com/manus-storage/evolxion-logo_4c83cefe.webp" alt="EVOLXION" style="height:30px;" onerror="this.style.display='none'">
+                    </div>
+                    <div class="quiz-progress">
+                        <div class="quiz-progress-bar" style="width:60%;"></div>
+                    </div>
+                    <div class="quiz-question">¿Cuál es tu objetivo principal?</div>
+                    <div class="quiz-option">Sentirme mejor conmigo misma</div>
+                    <div class="quiz-option">Perder peso de forma divertida</div>
+                    <div class="quiz-option">Tener más energía en mi día a día</div>
+                    <div class="quiz-option">Conectar con una comunidad</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box" style="margin-top:30px;">
+            <p>"El quiz page te ventila toda la morralla. Si te dice que no puede invertir ni 10€, pues es lo que hay. Ya te está diciendo que no tiene ni un chavo. Y tú no pierdes tiempo en WhatsApp con esa persona."</p>
+            <div class="attribution">— Adrián Lucena (Lucenathor)</div>
+        </div>
+    </div>
+</section>
+
+<!-- SECCIÓN 8: GUIONES DE ANUNCIOS -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number">08 — Copies de Anuncios</div>
+            <h2 class="section-title">Guiones de Anuncios Meta Ads — Pain First</h2>
+            <p class="section-subtitle">3 anuncios para cada embudo. Formato Pain First: gancho de dolor → solución → CTA.</p>
+        </div>
+
+        <h3 style="font-family:'Space Grotesk'; font-size:18px; font-weight:600; margin: 30px 0 20px; color:var(--accent);">Anuncios para INSTRUCTOR</h3>
+
+        <div class="ad-script">
+            <span class="ad-target">Instructor — Estancamiento</span>
+            <div class="ad-hook">"Cobras 15€ por clase y trabajas más horas que nadie. ¿Hasta cuándo?"</div>
+            <div class="ad-body">
+                <p>Eres instructor de fitness. Te encanta lo que haces. Pero seamos honestos: estás atrapado.</p>
+                <p style="margin-top:10px;">Dependes de un gimnasio que te puede echar mañana. No tienes marca propia. No sabes cómo captar clientes fuera de tu sala. Y cada mes es empezar de cero.</p>
+                <p style="margin-top:10px;">EVOLXION es diferente. No es otra certificación de fin de semana. Es un sistema completo: coreografías, marketing, tu propia web, anuncios que ya funcionan, y una comunidad internacional de instructores que facturan.</p>
+                <p style="margin-top:10px;">¿Quieres liderar o seguir dando clases por cuatro duros?</p>
+            </div>
+            <span class="ad-cta">Descubre si es para ti →</span>
+        </div>
+
+        <div class="ad-script">
+            <span class="ad-target">Instructor — Oportunidad</span>
+            <div class="ad-hook">"¿Y si pudieras tener tu propio negocio de fitness sin empezar de cero?"</div>
+            <div class="ad-body">
+                <p>Imagina tener 15 coreografías listas, una metodología probada, tu propia web con tu nombre, anuncios que ya están convirtiendo... y una licencia oficial que te respalda.</p>
+                <p style="margin-top:10px;">Eso es exactamente lo que reciben los instructores EVOLXION. Un negocio llave en mano por menos de lo que pagas de gasolina al mes.</p>
+                <p style="margin-top:10px;">Ya hay instructores en España, Alemania, Brasil y Francia. La próxima zona puede ser la tuya.</p>
+            </div>
+            <span class="ad-cta">Quiero saber más →</span>
+        </div>
+
+        <div class="ad-script">
+            <span class="ad-target">Instructor — Exclusividad</span>
+            <div class="ad-hook">"No buscamos instructores. Buscamos líderes."</div>
+            <div class="ad-body">
+                <p>EVOLXION no certifica a cualquiera. Buscamos personas comprometidas que quieran transformar vidas — empezando por la suya.</p>
+                <p style="margin-top:10px;">Formación completa. Desarrollo personal real. Marketing y marca personal. Comunidad internacional. Y un sistema que te permite vivir de lo que amas.</p>
+                <p style="margin-top:10px;">Si crees que tienes lo que hace falta, responde unas preguntas y demuéstralo.</p>
+            </div>
+            <span class="ad-cta">Aplicar ahora →</span>
+        </div>
+
+        <h3 style="font-family:'Space Grotesk'; font-size:18px; font-weight:600; margin: 50px 0 20px; color:var(--accent);">Anuncios para CLIENTE (Membresía)</h3>
+
+        <div class="ad-script">
+            <span class="ad-target">Cliente — Abandono</span>
+            <div class="ad-hook">"Llevas años empezando y dejándolo. No es tu culpa."</div>
+            <div class="ad-body">
+                <p>No te falta motivación. No te falta fuerza de voluntad. Lo que te falta es algo que encaje con tu vida real.</p>
+                <p style="margin-top:10px;">EVOLXION Experience no es una clase de fitness más. Es una experiencia emocional a través del movimiento. Bailas, sudas, te conectas contigo — y no quieres parar.</p>
+                <p style="margin-top:10px;">Desde tu casa. A tu ritmo. Con una comunidad que te acompaña. Por menos de lo que cuesta un café a la semana.</p>
+            </div>
+            <span class="ad-cta">Descubre tu experiencia →</span>
+        </div>
+
+        <div class="ad-script">
+            <span class="ad-target">Cliente — Desconexión</span>
+            <div class="ad-hook">"¿Cuándo fue la última vez que hiciste algo solo para ti?"</div>
+            <div class="ad-body">
+                <p>Entre el trabajo, los hijos, la casa y las mil cosas del día... te has olvidado de ti. Y no está bien.</p>
+                <p style="margin-top:10px;">EVOLXION es tu espacio. 30 minutos para reconectar con tu cuerpo, tu energía y tu autoestima. Sin filtros, sin perfección, sin juicio. Solo tú, la música y el movimiento.</p>
+                <p style="margin-top:10px;">Personas de 12 países ya están evolucionando juntas. ¿Te unes?</p>
+            </div>
+            <span class="ad-cta">Empieza hoy →</span>
+        </div>
+
+        <div class="ad-script">
+            <span class="ad-target">Cliente — Energía</span>
+            <div class="ad-hook">"No vine a perder peso. Vine a encontrarme."</div>
+            <div class="ad-body">
+                <p>Eso dijo Laura cuando llevaba 2 semanas en EVOLXION. Hoy lleva 4 meses y dice que le cambió la vida.</p>
+                <p style="margin-top:10px;">No es magia. Es una metodología real: SER → HACER → TENER. Primero trabajas quién eres. Después todo cambia.</p>
+                <p style="margin-top:10px;">Sesiones ilimitadas. Coreografías nuevas cada semana. Comunidad privada. Activación mental. Todo por $100 al año.</p>
+            </div>
+            <span class="ad-cta">Únete a la experiencia →</span>
+        </div>
+    </div>
+</section>
+
+<!-- SECCIÓN 9: CHECKLIST DE GRABACIÓN -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number">09 — Checklist de Grabación</div>
+            <h2 class="section-title">Lo Que Rody Necesita Grabar</h2>
+            <p class="section-subtitle">Lista de contenido nuevo necesario para activar los embudos.</p>
+        </div>
+
+        <div class="grid-2">
+            <div class="card">
+                <div class="card-title">VSL Instructor (Prioridad Alta)</div>
+                <ul class="checklist">
+                    <li>Video de 2:30 min directo a cámara en el gimnasio</li>
+                    <li>B-roll de clase real con instructores</li>
+                    <li>Testimonios cortos de 2-3 instructores actuales</li>
+                    <li>Pantallazos de seguidores/resultados de instructores</li>
+                    <li>Cierre con energía alta + logo EVOLXION</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="card-title">Contenido para Anuncios (Prioridad Alta)</div>
+                <ul class="checklist">
+                    <li>3 hooks diferentes grabados (15 seg cada uno)</li>
+                    <li>Clip de clase real con energía máxima (30 seg)</li>
+                    <li>Testimonio de Elena ampliado (60 seg)</li>
+                    <li>Video "un día como instructor EVOLXION" (60 seg)</li>
+                    <li>Rody explicando la metodología SHT (45 seg)</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="card-title">Contenido Orgánico (Prioridad Media)</div>
+                <ul class="checklist">
+                    <li>Lives en TikTok durante clases (martes y jueves)</li>
+                    <li>Clips de 15 seg de momentos de clase</li>
+                    <li>Before/After emocional de alumnos</li>
+                    <li>Rody hablando de mentalidad (contenido SHT)</li>
+                    <li>Colaboraciones con instructores actuales</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="card-title">Assets Técnicos (Prioridad Media)</div>
+                <ul class="checklist">
+                    <li>Logo EVOLXION en alta resolución (PNG transparente)</li>
+                    <li>Fotos profesionales de Rody (para landing)</li>
+                    <li>Capturas de la plataforma Systeme.io</li>
+                    <li>Screenshots de la comunidad WhatsApp</li>
+                    <li>Certificado de instructor (mockup)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECCIÓN 10: ESTRATEGIA CLAVE -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number">10 — Decisiones Estratégicas</div>
+            <h2 class="section-title">Principios Clave de la Sesión</h2>
+            <p class="section-subtitle">Las directrices fundamentales que guían toda la estrategia de EVOLXION.</p>
+        </div>
+
+        <div class="grid-2">
+            <div class="card">
+                <div class="card-title">1. Validar en español primero</div>
+                <p>Aunque ya hay instructores en 6 países, el embudo se valida primero en español (España). Una vez funcione, se replica en otros idiomas. Cambiar idiomas después es trivial.</p>
+            </div>
+            <div class="card">
+                <div class="card-title">2. Rody es la cara (por ahora)</div>
+                <p>Su energía es lo que vende. Cuando haya volumen de facturación suficiente, se puede delegar. Pero ahora, cada euro invertido con Rody al frente rinde el doble.</p>
+            </div>
+            <div class="card">
+                <div class="card-title">3. Baile primero, desarrollo después</div>
+                <p>El gancho es MOVIMIENTO y ENERGÍA. El desarrollo personal es el bonus que retiene, no el que atrae. No se cambia el orden de los factores.</p>
+            </div>
+            <div class="card">
+                <div class="card-title">4. Financiación = más ventas</div>
+                <p>Aunque sea low ticket (80-247€), ofrecer pagos de 15€/mes multiplica las conversiones x10. A ti te entra menos por unidad pero mucho más en volumen.</p>
+            </div>
+            <div class="card">
+                <div class="card-title">5. Valor percibido > coste real</div>
+                <p>La mini web, los anuncios incluidos, el marketing... todo tiene coste cero para Rody pero valor percibido de miles. Eso hace la oferta irresistible.</p>
+            </div>
+            <div class="card">
+                <div class="card-title">6. Quiz Page = filtro automático</div>
+                <p>Elimina el 80% del tiempo perdido en WhatsApp. Solo llegan leads que ya han demostrado interés, capacidad de inversión y compromiso.</p>
+            </div>
+        </div>
+
+        <div class="highlight-box" style="margin-top:30px;">
+            <p>"Tu puta energía, cómo tú explicas, cómo te mueves. Yo lo primero que vi, cuando te vi, fue eso. Hostia, este tío la parte, este tío es un máquina. Entonces, primero métele tú y después ya veremos cómo delegar."</p>
+            <div class="attribution">— Adrián Lucena (Lucenathor)</div>
+        </div>
+    </div>
+</section>
+
+<!-- SECCIÓN 11: ANÁLISIS WEB -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-number">11 — Análisis Web Actual</div>
+            <h2 class="section-title">Revisión de experience.evolxion.com</h2>
+            <p class="section-subtitle">Lo que está bien, lo que falta y las mejoras propuestas.</p>
+        </div>
+
+        <div class="grid-3">
+            <div class="card" style="border-color: rgba(34, 197, 94, 0.3);">
+                <div class="card-title" style="color: #22c55e;">Lo que funciona</div>
+                <p>Diseño dark/futurista coherente con la marca. VSL ya grabado con Elena. Metodología SHT bien explicada. Pricing claro. Testimonios presentes. Comunidad internacional como diferencial.</p>
+            </div>
+            <div class="card" style="border-color: rgba(239, 68, 68, 0.3);">
+                <div class="card-title" style="color: #ef4444;">Lo que falta</div>
+                <p>Quiz page de cualificación. Embudo automatizado. CRM conectado. Separación instructor/cliente. Financiación. Content Locker tras VSL. Anuncios pagados.</p>
+            </div>
+            <div class="card" style="border-color: rgba(124, 77, 255, 0.3);">
+                <div class="card-title" style="color: var(--accent);">Mejoras propuestas</div>
+                <p>Añadir quiz page post-VSL. Conectar a GoHighLevel. Crear landing separada para instructores. Activar Content Locker. Implementar bot WhatsApp. Lanzar ads.</p>
+            </div>
+        </div>
+
+        <table class="offer-table" style="margin-top:30px;">
+            <thead>
+                <tr>
+                    <th>Elemento</th>
+                    <th>Estado Actual</th>
+                    <th>Acción Requerida</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Landing Cliente</td><td style="color:#22c55e;">Existe (experience.evolxion.com)</td><td>Añadir quiz page + Content Locker</td></tr>
+                <tr><td>Landing Instructor</td><td style="color:#ef4444;">No existe</td><td>Crear desde cero con VSL propio</td></tr>
+                <tr><td>VSL Cliente</td><td style="color:#22c55e;">Existe (Vimeo)</td><td>Optimizar hook inicial</td></tr>
+                <tr><td>VSL Instructor</td><td style="color:#ef4444;">No existe</td><td>Grabar con guión proporcionado</td></tr>
+                <tr><td>Quiz Page</td><td style="color:#ef4444;">No existe</td><td>Crear 2 (instructor + cliente)</td></tr>
+                <tr><td>CRM</td><td style="color:#ef4444;">No conectado</td><td>Implementar GoHighLevel</td></tr>
+                <tr><td>Bot WhatsApp</td><td style="color:#ef4444;">No existe</td><td>Configurar seguimiento automatizado</td></tr>
+                <tr><td>Anuncios Meta</td><td style="color:#ef4444;">0€ invertidos</td><td>Lanzar con copies proporcionados</td></tr>
+                <tr><td>Financiación</td><td style="color:#ef4444;">No disponible</td><td>Activar pagos fraccionados</td></tr>
+                <tr><td>Web Instructor (subdominio)</td><td style="color:#ef4444;">No existe</td><td>Template en GHL replicable</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section">
+    <div class="container">
+        <div class="section-number" style="text-align:center;">Siguiente Paso</div>
+        <h2 class="section-title" style="text-align:center; margin-bottom:20px;">¿Listo para activar el sistema?</h2>
+        <p style="text-align:center; color:var(--text-muted); margin-bottom:40px; font-size:16px;">Agenda tu próxima sesión con Focus Consulting para implementar los embudos.</p>
+        <div style="text-align:center;">
+            <a href="https://focusconsultor.com" target="_blank" class="cta-btn">Agendar Sesión en Focus Consultor</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <p>Documento generado por <a href="https://focusconsultor.com" target="_blank">FOCUS Consulting Group</a> · Adrián Lucena (Lucenathor)</p>
+        <p style="margin-top:8px;">Sesión: 8 Junio 2026 · Cliente: EVOLXION (Rody) · Confidencial</p>
+    </div>
+</footer>
+
+<!-- INTERSECTION OBSERVER FOR ANIMATIONS -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Animate funnel steps on scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationPlayState = 'running';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.funnel-step, .funnel-bar').forEach(el => {
+        el.style.animationPlayState = 'paused';
+        observer.observe(el);
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+});
+</script>
+
+</body>
+</html>
