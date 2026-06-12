@@ -3,660 +3,1015 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EVOLXION — Estrategia de Captación | FOCUS</title>
+    <title>EVOLXION — Plan Estratégico de Captación | FOCUS Consulting Group</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        :root{--primary:#00E5FF;--primary-dark:#00B8D4;--accent:#7C4DFF;--accent-light:#B388FF;--bg:#060a14;--card:#0d1525;--card-2:#131d33;--text:#e2e8f0;--muted:#94a3b8;--border:rgba(0,229,255,.12);--g1:linear-gradient(135deg,#00E5FF,#7C4DFF);--g2:linear-gradient(135deg,#7C4DFF,#E040FB)}
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
-        .c{max-width:1060px;margin:0 auto;padding:0 24px}
-        .progress{position:fixed;top:0;left:0;height:3px;background:var(--g1);z-index:9999;box-shadow:0 0 10px rgba(0,229,255,.5)}
-        .particles{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden}
-        .p{position:absolute;width:2px;height:2px;background:var(--primary);border-radius:50%;opacity:0;animation:fp 8s infinite}
-        @keyframes fp{0%{opacity:0;transform:translateY(100vh) scale(0)}10%{opacity:.4}90%{opacity:.05}100%{opacity:0;transform:translateY(-100px) scale(1)}}
-        header{padding:14px 0;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(6,10,20,.94);backdrop-filter:blur(20px);z-index:100}
-        .hdr{display:flex;align-items:center;justify-content:space-between}
-        .hdr img{height:34px}
-        .badge{background:var(--g1);color:#000;font-size:9px;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.8px}
-        .rv{opacity:0;transform:translateY(36px);transition:all .7s cubic-bezier(.16,1,.3,1)}.rv.a{opacity:1;transform:translateY(0)}
-        .rl{opacity:0;transform:translateX(-50px);transition:all .7s cubic-bezier(.16,1,.3,1)}.rl.a{opacity:1;transform:translateX(0)}
-        .rr{opacity:0;transform:translateX(50px);transition:all .7s cubic-bezier(.16,1,.3,1)}.rr.a{opacity:1;transform:translateX(0)}
-        .rs{opacity:0;transform:scale(.88);transition:all .7s cubic-bezier(.16,1,.3,1)}.rs.a{opacity:1;transform:scale(1)}
-        .hero{padding:80px 0 60px;text-align:center;position:relative}
-        .hero::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(0,229,255,.04) 0%,transparent 70%);pointer-events:none}
-        .hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.6rem,4vw,2.5rem);font-weight:800;line-height:1.15;margin-bottom:16px;background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-        .hero p{font-size:15px;color:var(--muted);max-width:600px;margin:0 auto 24px}
-        .fl{display:inline-flex;align-items:center;gap:8px;background:rgba(0,229,255,.05);border:1px solid var(--border);padding:9px 20px;border-radius:10px;color:var(--primary);text-decoration:none;font-size:12px;font-weight:500;transition:all .3s}.fl:hover{background:rgba(0,229,255,.1);border-color:var(--primary);transform:translateY(-2px)}
-        .sec{padding:64px 0;border-top:1px solid var(--border);position:relative}
-        .sn{font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:3px;margin-bottom:8px}
-        .st{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.3rem,2.8vw,1.9rem);font-weight:700;margin-bottom:10px;line-height:1.2}
-        .ss{font-size:14px;color:var(--muted);max-width:640px}
-        .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;margin-bottom:14px;transition:all .4s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden}
-        .card:hover{border-color:rgba(0,229,255,.25);transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,229,255,.06)}
-        .ct{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;margin-bottom:8px;color:var(--primary)}
-        .card p{color:var(--muted);font-size:13.5px}
-        .g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
-        .fv{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:36px 28px;margin:28px 0;position:relative;overflow:hidden}
-        .fv::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(0,229,255,.01),transparent,rgba(124,77,255,.01),transparent);animation:rot 25s linear infinite}
-        @keyframes rot{to{transform:rotate(360deg)}}
-        .fb{display:flex;flex-direction:column;align-items:center;gap:4px;position:relative;z-index:1}
-        .bar{height:44px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:#fff;position:relative;overflow:hidden;opacity:0;transform:scaleX(0);transition:all .6s cubic-bezier(.16,1,.3,1);cursor:pointer}
-        .bar.a{opacity:1;transform:scaleX(1)}
-        .bar::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.07),transparent);animation:sh 4s infinite}
-        @keyframes sh{0%{left:-100%}100%{left:100%}}
-        .bar:nth-child(1){width:100%;background:linear-gradient(90deg,#00E5FF,#00B8D4);transition-delay:.1s}
-        .bar:nth-child(2){width:82%;background:linear-gradient(90deg,#00B8D4,#0097A7);transition-delay:.2s}
-        .bar:nth-child(3){width:66%;background:linear-gradient(90deg,#0097A7,#00796B);transition-delay:.3s}
-        .bar:nth-child(4){width:52%;background:linear-gradient(90deg,#00796B,#7C4DFF);transition-delay:.4s}
-        .bar:nth-child(5){width:38%;background:linear-gradient(90deg,#7C4DFF,#651FFF);transition-delay:.5s}
-        .bar:nth-child(6){width:25%;background:linear-gradient(90deg,#651FFF,#E040FB);transition-delay:.6s}
-        .bar:hover{transform:scaleX(1) scaleY(1.05);box-shadow:0 4px 16px rgba(0,229,255,.15)}
-        .fs{display:flex;align-items:flex-start;gap:18px;padding:18px 0;position:relative}
-        .fi{width:44px;height:44px;min-width:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;background:var(--g1);color:#000;position:relative;z-index:2;box-shadow:0 4px 14px rgba(0,229,255,.2)}
-        .fline{position:absolute;left:45px;top:62px;width:2px;height:calc(100% - 44px);background:linear-gradient(to bottom,var(--primary),rgba(124,77,255,.15),transparent)}
-        .fc{flex:1;padding-top:1px}
-        .fc h4{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;margin-bottom:3px}
-        .fc p{font-size:13px;color:var(--muted)}
-        .vsl{background:var(--card-2);border:2px solid var(--primary);border-radius:16px;padding:36px;margin:20px 0;position:relative;box-shadow:0 0 24px rgba(0,229,255,.05)}
-        .vsl::before{content:attr(data-label);position:absolute;top:-11px;left:20px;background:var(--g1);color:#000;font-size:9px;font-weight:800;padding:3px 12px;border-radius:4px;letter-spacing:1.5px}
-        .vts{font-size:10px;color:var(--primary);font-weight:700;margin-bottom:2px;font-family:'Space Grotesk',sans-serif}
-        .vl{margin-bottom:16px;padding:12px 16px;border-left:3px solid rgba(0,229,255,.2);border-radius:0 7px 7px 0;background:rgba(0,229,255,.015);transition:all .3s}
-        .vl:hover{border-left-color:var(--primary);background:rgba(0,229,255,.03)}
-        .vl p{font-size:14px;color:var(--text);line-height:1.7}
-        .vd{font-style:italic;color:var(--accent-light)!important;font-size:12px!important;margin-top:5px}
-        .ad{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px;margin-bottom:18px;position:relative;overflow:hidden;transition:all .4s}
-        .ad::after{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--g1)}
-        .ad:hover{border-color:rgba(0,229,255,.2);transform:translateX(3px)}
-        .at{display:inline-block;background:rgba(124,77,255,.1);color:var(--accent-light);font-size:9px;font-weight:700;padding:3px 9px;border-radius:4px;margin-bottom:10px;text-transform:uppercase;letter-spacing:1px}
-        .ah{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;margin-bottom:12px;color:#fff;line-height:1.3}
-        .ab{font-size:13.5px;color:var(--muted);line-height:1.7}
-        .ac{display:inline-block;margin-top:14px;background:var(--g1);color:#000;font-weight:700;font-size:10px;padding:9px 20px;border-radius:5px;text-transform:uppercase;letter-spacing:1px}
-        .q{background:rgba(0,229,255,.02);border-left:3px solid var(--primary);padding:18px 22px;border-radius:0 10px 10px 0;margin:20px 0}
-        .q p{font-size:14px;color:var(--text);font-style:italic}.q .attr{font-size:11px;color:var(--primary);margin-top:6px;font-style:normal;font-weight:600}
-        .tbl{width:100%;border-collapse:collapse;margin:18px 0;font-size:13px;border-radius:10px;overflow:hidden}
-        .tbl th{background:rgba(0,229,255,.06);color:var(--primary);padding:12px 14px;text-align:left;font-weight:600;font-size:9px;text-transform:uppercase;letter-spacing:1px}
-        .tbl td{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.025);color:var(--muted)}
-        .tbl tr:hover td{background:rgba(0,229,255,.015);color:var(--text)}
-        .cmp{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}
-        .cmp-bad{background:rgba(239,68,68,.025);border:1px solid rgba(239,68,68,.1);border-radius:12px;padding:22px}
-        .cmp-good{background:rgba(0,229,255,.025);border:1px solid rgba(0,229,255,.1);border-radius:12px;padding:22px}
-        .cmp h4{font-size:11px;font-weight:700;margin-bottom:10px;text-transform:uppercase;letter-spacing:1px}
-        .cmp-bad h4{color:#ef4444}.cmp-good h4{color:var(--primary)}
-        .cmp ul{list-style:none;padding:0}.cmp li{font-size:12.5px;color:var(--muted);padding:3px 0}
-        .qm{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;max-width:400px;margin:20px auto}
-        .qp{height:3px;background:rgba(255,255,255,.05);border-radius:3px;margin-bottom:20px;overflow:hidden}
-        .qpb{height:100%;background:var(--g1);border-radius:3px;width:0%;animation:qpa 3s ease forwards 1s}
-        @keyframes qpa{to{width:60%}}
-        .qq{font-size:14px;font-weight:600;margin-bottom:14px;color:#fff}
-        .qo{display:block;background:rgba(0,229,255,.02);border:1px solid var(--border);border-radius:9px;padding:10px 14px;margin-bottom:7px;font-size:13px;color:var(--text);cursor:pointer;transition:all .3s cubic-bezier(.16,1,.3,1)}
-        .qo:hover{border-color:var(--primary);background:rgba(0,229,255,.07);transform:translateX(4px)}
-        .cta-s{text-align:center;padding:72px 0}
-        .cta-btn{display:inline-block;background:var(--g1);color:#000;font-weight:800;font-size:13px;padding:16px 44px;border-radius:11px;text-decoration:none;text-transform:uppercase;letter-spacing:1.5px;transition:all .4s cubic-bezier(.16,1,.3,1);box-shadow:0 4px 20px rgba(0,229,255,.2);position:relative;overflow:hidden}
-        .cta-btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);animation:cs 2.5s infinite}
-        @keyframes cs{0%{left:-100%}100%{left:100%}}
-        .cta-btn:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 8px 36px rgba(0,229,255,.35)}
-        .cl{list-style:none;padding:0}
-        .cl li{display:flex;align-items:flex-start;gap:9px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.025);font-size:13px;color:var(--muted)}
-        .cl li::before{content:'▸';color:var(--primary);font-size:11px;margin-top:2px}
-        footer{padding:32px 0;border-top:1px solid var(--border);text-align:center;font-size:11px;color:var(--muted)}
-        footer a{color:var(--primary);text-decoration:none}
-        .key-insight{background:rgba(124,77,255,.04);border:1px solid rgba(124,77,255,.15);border-radius:12px;padding:20px 24px;margin:20px 0}
-        .key-insight h4{font-size:12px;color:var(--accent-light);font-weight:700;margin-bottom:6px;text-transform:uppercase;letter-spacing:1px}
-        .key-insight p{font-size:13.5px;color:var(--text)}
-        @media(max-width:768px){.cmp{grid-template-columns:1fr}.fs{gap:12px}.fi{width:38px;height:38px;min-width:38px;font-size:14px}.fline{left:37px}.vsl{padding:24px 16px}.hero{padding:56px 0 44px}.sec{padding:48px 0}.bar{font-size:9px;height:38px}}
+        :root {
+            --navy: #1a2332;
+            --navy-deep: #0f1720;
+            --navy-light: #243447;
+            --gold: #c9a84c;
+            --gold-light: #e5c96e;
+            --gold-muted: rgba(201,168,76,.15);
+            --white: #f8f9fa;
+            --text: #d4d8dc;
+            --muted: #8a9bae;
+            --border: rgba(201,168,76,.12);
+            --border-light: rgba(255,255,255,.06);
+            --accent: #4a90d9;
+            --red: #d94a4a;
+            --green: #4ad97a;
+            --orange: #d9964a;
+        }
+        * { margin:0; padding:0; box-sizing:border-box }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--navy-deep);
+            color: var(--text);
+            line-height: 1.8;
+            font-size: 14px;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { max-width: 920px; margin: 0 auto; padding: 0 40px }
+        
+        /* Header */
+        header {
+            padding: 28px 0;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: rgba(15,23,32,.97);
+            backdrop-filter: blur(20px);
+            z-index: 100;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo { height: 38px; }
+        .header-meta {
+            font-size: 11px;
+            color: var(--muted);
+            text-align: right;
+            line-height: 1.5;
+        }
+        .header-meta strong { color: var(--gold); font-weight: 600; }
+        
+        /* Cover */
+        .cover {
+            padding: 100px 0 80px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        .cover-label {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 24px;
+        }
+        .cover h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4.5vw, 3.2rem);
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+        .cover-sub {
+            font-size: 15px;
+            color: var(--muted);
+            max-width: 560px;
+            margin: 0 auto 36px;
+        }
+        .cover-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 10px 24px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            transition: all .3s;
+        }
+        .cover-link:hover { background: var(--gold-muted); border-color: var(--gold); }
+        
+        /* Sections */
+        .section {
+            padding: 56px 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .section-num {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 12px;
+            line-height: 1.25;
+        }
+        .section-desc {
+            font-size: 13.5px;
+            color: var(--muted);
+            max-width: 600px;
+            margin-bottom: 28px;
+        }
+        
+        /* Cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 20px 0; }
+        .card {
+            background: var(--navy);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 24px;
+            transition: all .3s;
+        }
+        .card:hover { border-color: var(--border); transform: translateY(-1px); }
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+        .card p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+        
+        /* Key Insight */
+        .insight {
+            background: var(--gold-muted);
+            border-left: 3px solid var(--gold);
+            padding: 20px 24px;
+            border-radius: 0 8px 8px 0;
+            margin: 24px 0;
+        }
+        .insight-label {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 6px;
+        }
+        .insight p { font-size: 14px; color: var(--white); line-height: 1.7; }
+        
+        /* Quote */
+        .quote {
+            border-left: 2px solid var(--gold);
+            padding: 16px 20px;
+            margin: 24px 0;
+            background: rgba(201,168,76,.03);
+            border-radius: 0 6px 6px 0;
+        }
+        .quote p { font-size: 14px; color: var(--text); font-style: italic; line-height: 1.7; }
+        .quote-attr { font-size: 11px; color: var(--gold); margin-top: 8px; font-style: normal; font-weight: 600; }
+        
+        /* Funnel */
+        .funnel-container { margin: 28px 0; }
+        .funnel-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            padding: 18px 0;
+            border-bottom: 1px solid var(--border-light);
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all .5s ease;
+        }
+        .funnel-step.visible { opacity: 1; transform: translateX(0); }
+        .funnel-num {
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            background: var(--gold-muted);
+            color: var(--gold);
+            border: 1px solid var(--border);
+        }
+        .funnel-content h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 3px;
+        }
+        .funnel-content p { font-size: 12.5px; color: var(--muted); }
+        
+        /* VSL */
+        .vsl-block {
+            background: var(--navy);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 32px;
+            margin: 24px 0;
+            position: relative;
+        }
+        .vsl-label {
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: var(--gold);
+            color: var(--navy-deep);
+            font-size: 9px;
+            font-weight: 700;
+            padding: 3px 12px;
+            border-radius: 4px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+        .vsl-line {
+            margin-bottom: 18px;
+            padding: 14px 18px;
+            border-left: 2px solid var(--border);
+            border-radius: 0 6px 6px 0;
+            background: rgba(255,255,255,.01);
+            transition: all .3s;
+        }
+        .vsl-line:hover { border-left-color: var(--gold); background: rgba(201,168,76,.02); }
+        .vsl-time {
+            font-size: 10px;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 4px;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: .5px;
+        }
+        .vsl-line p { font-size: 14px; color: var(--white); line-height: 1.7; }
+        .vsl-dir { font-style: italic; color: var(--muted) !important; font-size: 12px !important; margin-top: 6px; }
+        .vsl-hooks { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border-light); }
+        .vsl-hooks h5 { font-size: 10px; color: var(--gold); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; }
+        .vsl-hooks li { font-size: 13px; color: var(--muted); padding: 4px 0; list-style: none; }
+        .vsl-hooks li::before { content: "\2192 "; color: var(--gold); }
+        
+        /* Ad Copy */
+        .ad-block {
+            background: var(--navy);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 28px;
+            margin-bottom: 16px;
+            position: relative;
+            overflow: hidden;
+            transition: all .3s;
+        }
+        .ad-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: var(--gold);
+        }
+        .ad-block:hover { border-color: var(--border); }
+        .ad-tag {
+            display: inline-block;
+            background: var(--gold-muted);
+            color: var(--gold);
+            font-size: 9px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 3px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .ad-hook {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 12px;
+            line-height: 1.35;
+        }
+        .ad-body { font-size: 13px; color: var(--muted); line-height: 1.7; }
+        .ad-body p + p { margin-top: 10px; }
+        .ad-cta {
+            display: inline-block;
+            margin-top: 14px;
+            background: var(--gold);
+            color: var(--navy-deep);
+            font-weight: 700;
+            font-size: 10px;
+            padding: 8px 18px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Quiz */
+        .quiz-card {
+            background: var(--navy);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 18px 22px;
+            margin-bottom: 10px;
+        }
+        .quiz-card strong { color: var(--gold); font-size: 13px; }
+        .quiz-card p { font-size: 13px; color: var(--text); margin-top: 2px; }
+        .quiz-options { font-size: 11.5px; color: var(--muted); margin-top: 5px; }
+        .quiz-filter { font-size: 11px; color: var(--gold); margin-top: 4px; font-style: italic; }
+        
+        /* Table */
+        .tbl {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 13px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .tbl th {
+            background: var(--gold-muted);
+            color: var(--gold);
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .tbl td {
+            padding: 11px 16px;
+            border-bottom: 1px solid var(--border-light);
+            color: var(--muted);
+        }
+        .tbl tr:hover td { background: rgba(201,168,76,.02); color: var(--text); }
+        
+        /* Checklist */
+        .checklist { list-style: none; padding: 0; }
+        .checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 9px 0;
+            border-bottom: 1px solid var(--border-light);
+            font-size: 13px;
+            color: var(--muted);
+        }
+        .checklist li::before {
+            content: '\25B8';
+            color: var(--gold);
+            font-size: 10px;
+            margin-top: 3px;
+        }
+        
+        /* Notes */
+        .notes-box {
+            background: var(--navy);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+        .notes-box h4 {
+            font-size: 11px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+        }
+        .notes-box p { font-size: 13px; color: var(--text); line-height: 1.8; }
+        
+        /* CTA */
+        .cta-section { text-align: center; padding: 80px 0 60px; }
+        .cta-btn {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy-deep);
+            font-weight: 700;
+            font-size: 12px;
+            padding: 14px 40px;
+            border-radius: 6px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all .3s;
+        }
+        .cta-btn:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201,168,76,.2); }
+        
+        /* Footer */
+        footer {
+            padding: 28px 0;
+            border-top: 1px solid var(--border-light);
+            text-align: center;
+            font-size: 11px;
+            color: var(--muted);
+        }
+        footer a { color: var(--gold); text-decoration: none; }
+        
+        /* Animations */
+        .reveal { opacity: 0; transform: translateY(20px); transition: all .6s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        
+        /* Responsive */
+        @media(max-width:768px) {
+            .container { padding: 0 20px; }
+            .cover { padding: 60px 0 50px; }
+            .section { padding: 40px 0; }
+            .grid { grid-template-columns: 1fr; }
+            .vsl-block { padding: 20px 16px; }
+            .header-meta { display: none; }
+        }
     </style>
 </head>
 <body>
-<div class="progress" id="pb"></div>
-<div class="particles" id="pt"></div>
 
-<header><div class="c hdr">
-    <img src="https://experience.evolxion.com/manus-storage/evolxion-logo_4c83cefe.webp" alt="EVOLXION" onerror="this.outerHTML='<span style=font-family:Space+Grotesk;font-weight:800;font-size:18px;color:#00E5FF>EVOLXION</span>'">
-    <span class="badge">Focus Consulting</span>
-</div></header>
+<header>
+<div class="container header-inner">
+    <img src="data:image/png;base64,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" alt="FOCUS Consulting Group" class="logo">
+    <div class="header-meta">
+        <strong>Confidencial</strong><br>
+        EVOLXION &mdash; Junio 2026
+    </div>
+</div>
+</header>
 
-<section class="hero">
-<div class="c">
-    <h1 class="rv">De Audiencia Orgánica a Sistema de Ventas Automatizado</h1>
-    <p class="rv">Embudos, guiones de grabación, copies de anuncios y quiz page listos para implementar. Dos verticales: instructores y membresía.</p>
-    <a href="https://fathom.video/share/mYPW89UbHFMHkoy4-yxydJDJKTqpVVA8" target="_blank" class="fl rv">▶ Ver sesión completa</a>
+<section class="cover">
+<div class="container">
+    <div class="cover-label">Plan Estrat&eacute;gico de Captaci&oacute;n</div>
+    <h1>De Audiencia Org&aacute;nica a Sistema de Ventas Automatizado</h1>
+    <p class="cover-sub">Embudos, guiones de grabaci&oacute;n, copies de anuncios y quiz page listos para implementar. Dos verticales: formaci&oacute;n de instructores y membres&iacute;a cliente.</p>
+    <a href="https://fathom.video/share/mYPW89UbHFMHkoy4-yxydJDJKTqpVVA8" target="_blank" class="cover-link">&#9654; Ver sesi&oacute;n completa</a>
 </div>
 </section>
 
-<!-- 01 DECISIONES ESTRATÉGICAS -->
-<section class="sec"><div class="c">
-    <div class="rv"><div class="sn">01 — Decisiones Clave</div>
-    <h2 class="st">Lo Que Cambia a Partir de Hoy</h2></div>
+<!-- 01 DECISIONES CLAVE -->
+<section class="section">
+<div class="container">
+    <div class="reveal"><div class="section-num">01 &mdash; Decisiones Estrat&eacute;gicas</div>
+    <h2 class="section-title">Lo Que Cambia a Partir de Hoy</h2></div>
 
-    <div class="key-insight rv">
-        <h4>Regla de oro del mensaje</h4>
-        <p>La gente te sigue por el BAILE y la ENERGÍA. El desarrollo personal retiene, pero no atrae. Liderar siempre con movimiento. El desarrollo personal es el bonus que descubren dentro, no la promesa de entrada.</p>
+    <div class="insight reveal">
+        <div class="insight-label">Regla de Oro</div>
+        <p>La gente sigue a EVOLXION por el <strong>baile y la energ&iacute;a</strong>. El desarrollo personal retiene, pero no atrae. Liderar siempre con movimiento. El desarrollo personal es el bonus que descubren dentro, no la promesa de entrada.</p>
     </div>
 
-    <div class="g2">
-        <div class="card rl">
-            <div class="ct">Roudy = la cara</div>
-            <p>Aunque el objetivo sea delegar, ahora mismo la conversión depende de que Roudy esté en el VSL, en los anuncios, sudando y explicando con energía. Cuando facture 20-30K/mes, se diversifica la imagen.</p>
+    <div class="grid">
+        <div class="card reveal">
+            <div class="card-title">Roudy = la cara</div>
+            <p>Aunque el objetivo sea delegar, ahora mismo la conversi&oacute;n depende de que Roudy est&eacute; en el VSL, en los anuncios, sudando y explicando con energ&iacute;a. Cuando facture 20-30K/mes, se diversifica la imagen.</p>
         </div>
-        <div class="card rr">
-            <div class="ct">Validar en español primero</div>
-            <p>Los 6 idiomas están listos, pero el embudo se valida en español. Si funciona, replicar es copiar y traducir. Si no funciona, solo hay que cambiar uno.</p>
+        <div class="card reveal">
+            <div class="card-title">Validar en espa&ntilde;ol primero</div>
+            <p>Los 6 idiomas est&aacute;n listos, pero el embudo se valida en espa&ntilde;ol. Si funciona, replicar es copiar y traducir. Si no funciona, solo hay que cambiar uno.</p>
         </div>
-        <div class="card rl">
-            <div class="ct">Social Funnel</div>
-            <p>4.000 seguidores/día en Facebook + 400 IG + 600 TikTok + 100 YouTube. Esa audiencia caliente es la que entra al embudo. No se necesita público frío por ahora.</p>
+        <div class="card reveal">
+            <div class="card-title">Social Funnel</div>
+            <p>4.000 seguidores/d&iacute;a en Facebook + 400 IG + 600 TikTok + 100 YouTube. Esa audiencia caliente es la que entra al embudo. No se necesita p&uacute;blico fr&iacute;o por ahora.</p>
         </div>
-        <div class="card rr">
-            <div class="ct">Financiación = más volumen</div>
-            <p>Si alguien puede ser instructor desde 15€/mes en vez de 247€ de golpe, entran 10x más. La barrera de entrada se elimina. El precio no cambia, el acceso sí.</p>
+        <div class="card reveal">
+            <div class="card-title">Financiaci&oacute;n = m&aacute;s volumen</div>
+            <p>Si alguien puede ser instructor desde 15&euro;/mes en vez de 247&euro; de golpe, entran 10x m&aacute;s. La barrera de entrada se elimina. El precio no cambia, el acceso s&iacute;.</p>
         </div>
     </div>
 
-    <div class="q rv">
-        <p>"Si tú le dices desarrollo personal a una tía que está jodida de 37 años, le viene todo de muy golpe. Ella quiere moverse, sácala de ahí. Y después, si le metes el desarrollo, de puta madre. Pero no cambies el orden de los factores."</p>
-        <div class="attr">— Adrián Lucena</div>
+    <div class="quote reveal">
+        <p>&ldquo;Si t&uacute; le dices desarrollo personal a una t&iacute;a que est&aacute; jodida de 37 a&ntilde;os, le viene todo de muy golpe. Ella quiere moverse, s&aacute;cala de ah&iacute;. Y despu&eacute;s, si le metes el desarrollo, de puta madre. Pero no cambies el orden de los factores.&rdquo;</p>
+        <div class="quote-attr">&mdash; Adri&aacute;n Lucena, FOCUS Consulting Group</div>
     </div>
-</div></section>
+</div>
+</section>
 
 <!-- 02 EMBUDO INSTRUCTOR -->
-<section class="sec"><div class="c">
-    <div class="rv"><div class="sn">02 — Embudo Instructor</div>
-    <h2 class="st">Audiencia Propia → Instructor Certificado</h2>
-    <p class="ss">Ticket: 247€ Europa / 80 USD LATAM. Financiado: 15-20€/mes. Recurrente post-certificación: 14$/mes.</p></div>
+<section class="section">
+<div class="container">
+    <div class="reveal"><div class="section-num">02 &mdash; Embudo de Captaci&oacute;n</div>
+    <h2 class="section-title">Vertical Instructor &mdash; 6 Pasos</h2>
+    <p class="section-desc">Desde el primer contacto org&aacute;nico hasta el cierre de la certificaci&oacute;n. Cada paso filtra y cualifica.</p></div>
 
-    <div class="fv rs">
-        <div class="fb" id="fBars">
-            <div class="bar">ANUNCIO META → Seguidores propios + lookalike</div>
-            <div class="bar">LANDING + VSL → Roudy 2:30 min (él, sudando, en clase)</div>
-            <div class="bar">QUIZ PAGE → 5 preguntas que filtran morralla</div>
-            <div class="bar">FORMULARIO → Datos directos al CRM (GHL)</div>
-            <div class="bar">WHATSAPP BOT → Seguimiento automático 24/7</div>
-            <div class="bar">CIERRE → 247€ / financiado 15€/mes</div>
+    <div class="funnel-container">
+        <div class="funnel-step reveal">
+            <div class="funnel-num">1</div>
+            <div class="funnel-content">
+                <h4>Contenido org&aacute;nico + Anuncio Meta</h4>
+                <p>Hook de dolor en v&iacute;deo 9:16. Roudy a c&aacute;mara. Segmentaci&oacute;n: audiencia propia + lookalike 1%.</p>
+            </div>
+        </div>
+        <div class="funnel-step reveal">
+            <div class="funnel-num">2</div>
+            <div class="funnel-content">
+                <h4>Landing con VSL</h4>
+                <p>V&iacute;deo de 3 min (Roudy sudando, con energ&iacute;a). Debajo: quiz page como &uacute;nico CTA. Sin precio visible.</p>
+            </div>
+        </div>
+        <div class="funnel-step reveal">
+            <div class="funnel-num">3</div>
+            <div class="funnel-content">
+                <h4>Quiz Page (5 preguntas)</h4>
+                <p>Filtra por experiencia, zona, disponibilidad y capacidad de inversi&oacute;n. Descarta a quien no puede pagar.</p>
+            </div>
+        </div>
+        <div class="funnel-step reveal">
+            <div class="funnel-num">4</div>
+            <div class="funnel-content">
+                <h4>WhatsApp Bot + Seguimiento</h4>
+                <p>Mensaje autom&aacute;tico personalizado seg&uacute;n respuestas del quiz. Urgencia + escasez (5 licencias por zona).</p>
+            </div>
+        </div>
+        <div class="funnel-step reveal">
+            <div class="funnel-num">5</div>
+            <div class="funnel-content">
+                <h4>Llamada de cierre / Mensaje de voz</h4>
+                <p>Solo con los que pasaron el filtro. Presentar oferta completa + financiaci&oacute;n (15&euro;/mes).</p>
+            </div>
+        </div>
+        <div class="funnel-step reveal">
+            <div class="funnel-num">6</div>
+            <div class="funnel-content">
+                <h4>Onboarding + Web personal</h4>
+                <p>Alta en plataforma, subdominio propio, acceso a coreograf&iacute;as y comunidad. El instructor empieza a captar.</p>
+            </div>
         </div>
     </div>
-
-    <div class="fs rl"><div class="fi">1</div><div class="fline"></div><div class="fc">
-        <h4>Anuncio a audiencia propia</h4>
-        <p>Copy: "¿Te gustaría ser instructor de EVOLXION?" Segmentación: seguidores de la marca + lookalike. Formato: Roudy en clase real, energía máxima, 15 segundos. No se vende a fríos.</p>
-    </div></div>
-    <div class="fs rl"><div class="fi">2</div><div class="fline"></div><div class="fc">
-        <h4>Landing + VSL de 2:30</h4>
-        <p>Roudy como cara. Sudando. En la sala. Explicando con la misma energía que tiene en clase. Content Locker: no avanzan sin ver el vídeo. El VSL muestra el sistema completo, no solo la formación.</p>
-    </div></div>
-    <div class="fs rl"><div class="fi">3</div><div class="fline"></div><div class="fc">
-        <h4>Quiz Page — 5 preguntas</h4>
-        <p>Filtra experiencia, zona, idioma, disponibilidad e inversión. Si no puede pagar 15€/mes → fuera. Solo llegan al WhatsApp los que van en serio. Elimina la morralla antes de perder tiempo.</p>
-    </div></div>
-    <div class="fs rl"><div class="fi">4</div><div class="fline"></div><div class="fc">
-        <h4>Formulario → CRM</h4>
-        <p>Nombre, email, WhatsApp, país. Todo directo a GoHighLevel. Pipeline: lead → contactado → cualificado → cerrado. No se pierde ni un dato.</p>
-    </div></div>
-    <div class="fs rl"><div class="fi">5</div><div class="fline"></div><div class="fc">
-        <h4>WhatsApp Bot</h4>
-        <p>Resuelve dudas frecuentes, envía testimonios de instructores actuales, genera urgencia ("solo 5 licencias por zona") y agenda llamada. Funciona a las 3AM sin que Roudy toque nada.</p>
-    </div></div>
-    <div class="fs rl"><div class="fi">6</div><div class="fc">
-        <h4>Cierre</h4>
-        <p>Lead caliente. Ya vio VSL, pasó quiz, habló con bot. Solo falta cerrar. 247€ o financiado. El lead ya sabe exactamente qué se lleva.</p>
-    </div></div>
-</div></section>
-
-<!-- 03 EMBUDO CLIENTE -->
-<section class="sec"><div class="c">
-    <div class="rv"><div class="sn">03 — Embudo Cliente</div>
-    <h2 class="st">Membresía $100/año — Volumen</h2>
-    <p class="ss">Modelo Eli FitDance adaptado. Clase gratuita como mecanismo de cierre. Checkout en 1 clic.</p></div>
-
-    <div class="fs rr"><div class="fi">1</div><div class="fline"></div><div class="fc">
-        <h4>Contenido orgánico + anuncio</h4>
-        <p>TikTok/Reels con energía de clase real. La gente ve a Roudy reventándose. Hook emocional directo: abandono, desconexión, falta de energía. Siempre con MOVIMIENTO.</p>
-    </div></div>
-    <div class="fs rr"><div class="fi">2</div><div class="fline"></div><div class="fc">
-        <h4>Landing + VSL (experience.evolxion.com)</h4>
-        <p>Ya existe, pero necesita optimización: Roudy como cara (no solo Elena), más clips de clase real, Content Locker activo. El VSL tiene que MOVER, no solo hablar.</p>
-    </div></div>
-    <div class="fs rr"><div class="fi">3</div><div class="fline"></div><div class="fc">
-        <h4>Quiz — 4 preguntas</h4>
-        <p>Objetivo, experiencia previa, frecuencia deseada, inversión. Si dice que no puede pagar 10€/mes → fuera. Rápido, limpio, sin fricción.</p>
-    </div></div>
-    <div class="fs rr"><div class="fi">4</div><div class="fline"></div><div class="fc">
-        <h4>Clase gratuita (modelo Eli)</h4>
-        <p>El lead elige día y hora. Entra a una sesión real con otros alumnos. Al final de la clase, Roudy saluda a los nuevos y cierra. De cada 3-4 nuevos, 2 compran.</p>
-    </div></div>
-    <div class="fs rr"><div class="fi">5</div><div class="fc">
-        <h4>Oferta + pago</h4>
-        <p>Plan Anual: $100/año (priorizar). Plan Mensual: $12/mes. Apple Pay / Google Pay. Onboarding inmediato: plataforma + grupo WhatsApp + primera sesión EMOXION.</p>
-    </div></div>
-
-    <div class="key-insight rv">
-        <h4>Estrategia de directos (TikTok)</h4>
-        <p>En los directos de clase (martes y jueves 20:30), a mitad de la sesión: "¿Quieres la clase completa? El enlace está abajo." En los vídeos virales, cortar la coreografía a la mitad: "¿La quieres entera? Accede aquí." Social funnel puro.</p>
-    </div>
-</div></section>
-
-<!-- 04 OFERTA IRRESISTIBLE -->
-<section class="sec"><div class="c">
-    <div class="rv"><div class="sn">04 — Oferta Irresistible</div>
-    <h2 class="st">Por Qué Es Imposible Decirle Que No</h2></div>
-
-    <div class="cmp rs">
-        <div class="cmp-bad">
-            <h4>Zumba (la competencia)</h4>
-            <ul>
-                <li>❌ Formación de un fin de semana</li>
-                <li>❌ Te certifican y adiós</li>
-                <li>❌ Cada quien se inventa su coreografía</li>
-                <li>❌ Sin soporte posterior</li>
-                <li>❌ Sin marketing, sin web, sin nada</li>
-                <li>❌ Precio: 300-500€</li>
-            </ul>
-        </div>
-        <div class="cmp-good">
-            <h4>EVOLXION</h4>
-            <ul>
-                <li>✓ Formación completa (1 mes + 3 meses práctica)</li>
-                <li>✓ 15 coreografías oficiales con música propia</li>
-                <li>✓ Metodología + manual + comunicación</li>
-                <li>✓ Marketing + IA + marca personal</li>
-                <li>✓ <strong>Tu propia web (tunombre.evolxion.com)</strong></li>
-                <li>✓ <strong>Anuncios Meta ya probados incluidos</strong></li>
-                <li>✓ Mentorías en vivo + comunidad internacional</li>
-                <li>✓ Licencia oficial + música descargable</li>
-                <li>✓ Precio: 247€ (o 15€/mes)</li>
-            </ul>
-        </div>
-    </div>
-
-    <table class="tbl rv">
-        <thead><tr><th>Componente</th><th>Valor Percibido</th><th>Coste Real</th></tr></thead>
-        <tbody>
-            <tr><td>Formación Oficial</td><td>500€</td><td>Ya creado</td></tr>
-            <tr><td>15 Coreografías + Música Propia</td><td>400€</td><td>Ya creado (Apple Music)</td></tr>
-            <tr><td>Metodología + Manual</td><td>200€</td><td>Ya creado</td></tr>
-            <tr><td>Marca Personal + IA + RRSS</td><td>500€</td><td>Ya creado</td></tr>
-            <tr><td><strong>Web propia (subdominio GHL)</strong></td><td><strong>500€</strong></td><td><strong>3 minutos</strong></td></tr>
-            <tr><td><strong>Anuncios Meta probados</strong></td><td><strong>300€</strong></td><td><strong>0€ (ya existen)</strong></td></tr>
-            <tr><td>Mentorías Grupales</td><td>200€</td><td>1h/semana</td></tr>
-            <tr><td>Comunidad Internacional</td><td>150€</td><td>Grupo WhatsApp</td></tr>
-            <tr><td>Licencia Oficial</td><td>200€</td><td>PDF/certificado</td></tr>
-        </tbody>
-        <tfoot><tr><td><strong>TOTAL</strong></td><td><strong style="color:var(--primary)">3.050€</strong></td><td><strong style="color:#22c55e">247€</strong></td></tr></tfoot>
-    </table>
-
-    <div class="key-insight rv">
-        <h4>El diferencial que cierra la venta: la web</h4>
-        <p>Cada instructor recibe <strong>ruben.evolxion.com</strong>. Se crea en 3 minutos con GoHighLevel. No cuesta dominio ni hosting. Pero el instructor percibe un valor de 500€+. Es lo que hace que la oferta sea incomparable con cualquier otra certificación del mercado.</p>
-    </div>
-</div></section>
-
-<!-- 05 VSL INSTRUCTOR -->
-<section class="sec"><div class="c">
-    <div class="rv"><div class="sn">05 — VSL Instructor</div>
-    <h2 class="st">Guión de Grabación — 3:00 min</h2>
-    <p class="ss">Roudy directo a cámara. En la sala de clases. Sudando. Moviéndose. Que se sienta que esto es real, no una producción de estudio. Cada segundo cuenta.</p></div>
-
-    <div class="vsl rs" data-label="GUIÓN VSL — INSTRUCTOR · 3:00 MIN">
-        <div class="vl">
-            <div class="vts">0:00 — 0:15 | HOOK — Pattern Interrupt (15 seg)</div>
-            <p><strong>"15 euros por clase. Eso es lo que cobras. Después de años formándote, de madrugar, de aguantar a un dueño de gimnasio que te puede sustituir mañana por alguien que cobra menos. Y lo peor: no tienes marca, no tienes sistema, no tienes nada tuyo."</strong></p>
-            <p class="vd">[Roudy a cámara, plano medio-corto, en la sala VACÍA. Luz cenital dura. Sin música. Silencio incómodo. Tensión. Pausa de 1 segundo al final antes de corte.]</p>
-        </div>
-        <div class="vl">
-            <div class="vts">0:15 — 0:35 | AUTORIDAD — Quién te está hablando (20 seg)</div>
-            <p>"Yo soy Roudy. He formado a instructores en 6 países. Tengo más de 10 millones de seguidores en redes sociales. Nuestra música está en Apple Music. Y todo lo que ves aquí — la metodología, las coreografías, la comunidad — lo he construido yo desde cero, sin un euro en publicidad."</p>
-            <p class="vd">[Corte a Roudy empezando a moverse suavemente. B-roll rápido: capturas de redes con números de seguidores, Apple Music con EVOLXION Music, montaje de clases en diferentes países. 3 segundos máximo por clip. Ritmo creciente.]</p>
-        </div>
-        <div class="vl">
-            <div class="vts">0:35 — 0:55 | EMPATÍA — Yo estuve ahí (20 seg)</div>
-            <p>"Yo he estado exactamente donde tú estás. Dando clases por cuatro duros. Editando vídeos a las 3 de la mañana. Haciendo todo solo. Sin equipo, sin sistema, sin nadie que me dijera cómo convertir esto en un negocio de verdad."</p>
-            <p class="vd">[Roudy moviéndose más, calentando. B-roll emocional: instructor solo recogiendo material, luces del gym apagándose, parking vacío. Música empieza a subir lentamente.]</p>
-        </div>
-        <div class="vl">
-            <div class="vts">0:55 — 1:20 | PUENTE — El contraste (25 seg)</div>
-            <p>"¿Y si pudieras tener tu propia marca? Una web con tu nombre. Anuncios que captan clientes mientras duermes. 15 coreografías oficiales con música original que nadie más tiene. Una comunidad internacional que te respalda. Y un sistema que funciona — probado con instructores en España, Alemania, Brasil y Francia."</p>
-            <p class="vd">[TRANSICIÓN BRUSCA: clase EVOLXION a tope. Gente bailando, sudando, gritando, energía máxima. Roudy liderando con micrófono. Se siente la vibra. Mínimo 10 seg de clase real sin cortes.]</p>
-        </div>
-        <div class="vl">
-            <div class="vts">1:20 — 2:00 | SOLUCIÓN — El sistema completo (40 seg)</div>
-            <p>"EVOLXION no es una certificación de fin de semana donde te dan un papel y adiós. Es un sistema completo de negocio. Mira lo que te llevas:"</p>
-            <p style="margin-top:8px;padding-left:12px;border-left:2px solid rgba(0,229,255,.2)">"Las 15 coreografías oficiales con nuestra música original. La metodología EVOLXION completa. Formación en marca personal, marketing e inteligencia artificial. Tu propia web — tunombre.evolxion.com — lista para captar clientes. Anuncios de Meta que ya están convirtiendo, incluidos. Mentorías en vivo conmigo cada semana. Comunidad internacional de instructores. Y una licencia oficial que te certifica como líder EVOLXION."</p>
-            <p class="vd">[Montaje rápido sincronizado con cada punto: pantalla web instructor → dashboard Meta Ads → WhatsApp comunidad → coreografía → Roudy en mentoría → mapa con banderas → certificado. Cada clip 3-4 seg. Música alta. Roudy intercala hablando a cámara entre clips.]</p>
-        </div>
-        <div class="vl">
-            <div class="vts">2:00 — 2:30 | PRUEBA SOCIAL — No es teoría (30 seg)</div>
-            <p>"Esto no es teoría. Ya hay instructores que empezaron sin nada — sin seguidores, sin experiencia en marketing, sin web — y hoy tienen su negocio digital funcionando. Tienen su marca. Tienen sus clientes. Y cobran lo que valen."</p>
-            <p class="vd">[Testimonios reales: 2-3 instructores hablando 8-10 seg cada uno. Clips de SUS clases. Capturas de SUS webs con subdominio. Banderas de países. Si no hay testimonios grabados aún: B-roll de clases reales + texto superpuesto con resultados.]</p>
-        </div>
-        <div class="vl">
-            <div class="vts">2:30 — 2:50 | OBJECIÓN — Romper la barrera (20 seg)</div>
-            <p>"Y sé lo que estás pensando: ¿cuánto cuesta esto? Mira, una web te cobran mínimo 500 euros. Una formación decente otros 300. Los anuncios, el marketing, la IA... Estamos hablando de más de 3.000 euros en valor real. Tú te lo llevas todo por 247. O si lo prefieres, por 15 euros al mes. Menos que una cena."</p>
-            <p class="vd">[Roudy a cámara, más cerca. Tono confidencial. Números aparecen en pantalla tachados. 247€ aparece grande. Después: 15€/mes con animación.]</p>
-        </div>
-        <div class="vl">
-            <div class="vts">2:50 — 3:00 | CTA — Escasez + filtro (10 seg)</div>
-            <p><strong>"Pero esto no es para todo el mundo. Solo hay 5 licencias por zona. Si crees que tienes lo que hace falta — haz clic abajo, responde 5 preguntas y demuéstralo."</strong></p>
-            <p class="vd">[Roudy señala abajo con determinación. Música al pico. Energía máxima. Corte a negro 1 seg → Logo EVOLXION pulsa → Botón CTA con glow.]</p>
-        </div>
-    </div>
-
-    <div class="key-insight rv">
-        <h4>Notas de producción</h4>
-        <p><strong>Localización:</strong> La sala donde Roudy da clases. Real. Con sudor en el suelo. No estudio, no fondo IA.<br>
-        <strong>Energía:</strong> Roudy se mueve durante TODO el vídeo. Incluso cuando habla a cámara, está en movimiento ligero. Solo se queda quieto en el hook (tensión) y en la objeción (confidencial).<br>
-        <strong>Hooks para A/B:</strong> Grabar 3 aperturas diferentes de 15 seg: (1) "15€ por clase", (2) "Tu gimnasio te puede sustituir mañana", (3) "No buscamos instructores. Buscamos líderes."<br>
-        <strong>Ritmo:</strong> Ningún plano dura más de 5 segundos excepto cuando Roudy habla directo a cámara. Cortes rápidos = retención.<br>
-        <strong>Duración real hablada:</strong> ~420 palabras = 2:50-3:00 a ritmo natural con pausas dramáticas.</p>
-    </div>
-</div></section>
-
-<!-- 06 VSL CLIENTE -->
-<section class="sec"><div class="c">
-    <div class="rv"><div class="sn">06 — VSL Cliente Membresía</div>
-    <h2 class="st">Guión de Grabación — 3:15 min</h2>
-    <p class="ss">Roudy como cara. El 80% del vídeo es MOVIMIENTO: bailando, sudando, liderando clase. Solo para a cámara en el hook y en la oferta. La gente viene por lo que ve en TikTok — el VSL tiene que ser una extensión de eso, no un cambio de tema.</p></div>
-
-    <div class="vsl rs" data-label="GUIÓN VSL — CLIENTE MEMBRESÍA · 3:15 MIN">
-        <div class="vl">
-            <div class="vts">0:00 — 0:08 | PRE-HOOK — Pattern Interrupt Visual (8 seg)</div>
-            <p class="vd">[SIN VOZ. Clip de 8 segundos de una clase EVOLXION a tope: gente bailando, sudando, gritando, energía máxima. Música propia de EVOLXION sonando alto. Corte BRUSCO a silencio total.]</p>
-        </div>
-        <div class="vl">
-            <div class="vts">0:08 — 0:20 | HOOK — El castigo (12 seg)</div>
-            <p><strong>"Tu entrenamiento es un castigo. Y lo sabes. Te obligas a moverte porque sabes que lo necesitas. Pero cada minuto se te hace eterno. Y al final siempre pasa lo mismo: lo dejas."</strong></p>
-            <p class="vd">[Roudy directo a cámara, quieto. Fondo: gimnasio convencional vacío, luces frías, máquinas sin usar. Tono serio. Sin música. Silencio total después del clip de clase — el contraste es brutal. Pausa de 1 seg al final.]</p>
-        </div>
-        <div class="vl">
-            <div class="vts">0:20 — 0:40 | EMPATÍA — El ciclo que conoces (20 seg)</div>
-            <p>"Llevas meses — o años — en ese ciclo. Empezar, dejarlo, volver a empezar. Y cada vez que lo dejas, te sientes peor. No es que no quieras cuidarte. No es que te falte fuerza de voluntad. Lo que te falta es algo que encaje con tu vida real. Algo tan adictivo que el problema sea NO ir."</p>
-            <p class="vd">[B-roll emocional: mujer en sofá con móvil, alarma del gym que ignora, ropa de deporte doblada sin usar, espejo con mirada de frustración. Música suave, melancólica. Cada clip 3-4 seg. Ritmo lento — que se sienta el peso.]</p>
-        </div>
-        <div class="vl">
-            <div class="vts">0:40 — 0:55 | TRANSICIÓN — Esto es lo que se siente (15 seg)</div>
-            <p>"Ahora mira esto."</p>
-            <p class="vd">[TRANSICIÓN BRUSCA con flash blanco. Clase EVOLXION real: Roudy liderando con micrófono, 20-30 personas bailando, sudando, gritando, sonriendo. Música propia de EVOLXION a tope. MÍNIMO 12 SEGUNDOS SIN CORTES de clase real. Que se sienta la energía, el volumen, la vibra. La gente tiene que sentir que quiere estar ahí.]</p>
-        </div>
-        <div class="vl">
-            <div class="vts">0:55 — 1:10 | AUTORIDAD — Quién soy (15 seg)</div>
-            <p>"Soy Roudy. Llevo 8 años creando esto. Más de 10 millones de personas nos siguen en redes. Nuestra música está en Apple Music. Y he diseñado un método donde bailas, sudas, te llenas de energía — y no quieres parar. Nunca."</p>
-            <p class="vd">[Roudy moviéndose mientras habla — NUNCA quieto en esta sección. Flash rápido: captura de seguidores (2 seg), logo Apple Music (1 seg), montaje de clases en diferentes países (3 seg). Energía creciente.]</p>
-        </div>
-        <div class="vl">
-            <div class="vts">1:10 — 1:50 | SOLUCIÓN — Qué es EVOLXION Experience (40 seg)</div>
-            <p>"EVOLXION Experience fusiona baile y fitness para que estar en forma sea la mejor parte de tu día. No es una clase más. Es una experiencia. Liberas estrés. Te llenas de energía. Disfrutas moviéndote. Desde tu casa. A tu ritmo. Con música original que hemos creado para que cada sesión te haga sentir viva."</p>
-            <p style="margin-top:8px;padding-left:12px;border-left:2px solid rgba(0,229,255,.2)">"Dentro tienes sesiones EMOXION completas. Coreografías oficiales nuevas cada mes. El método EVOLXION BURN — diseñado para que tu cuerpo siga quemando calorías 24 horas después. Comunidad privada internacional. Activación mental. Y contenido nuevo cada semana para que nunca te aburras."</p>
-            <p class="vd">[Roudy bailando a tope, liderando clase. Intercala hablando a cámara MIENTRAS se mueve — nunca quieto. Montaje sincronizado con cada punto: sesión EMOXION → coreografía → gente sudando (BURN) → WhatsApp comunidad → activación mental (Roudy hablando con energía) → contenido nuevo. Música propia de EVOLXION de fondo. MÍNIMO 15 seg de clase real intercalados.]</p>
-        </div>
-        <div class="vl">
-            <div class="vts">1:50 — 2:20 | PRUEBA SOCIAL — No estás sola (30 seg)</div>
-            <p>"Personas de España, México, Argentina, Alemania, Francia... ya están evolucionando juntas. Mujeres que llevaban años sin hacer ejercicio. Que pensaban que esto no era para ellas. Y hoy no pueden parar."</p>
-            <p style="margin-top:8px">"Elena era una persona extremadamente tímida. Casi ni hablaba. Mírame hoy — hablando frente a una cámara, siendo parte de algo que cambió mi energía, mi motivación y la forma de verme a mí misma. Porque EVOLXION no solo transforma tu cuerpo — transforma cómo te sientes contigo."</p>
-            <p class="vd">[Elena hablando directo a cámara 10 seg (usar el testimonio real que ya existe). Corte a clips de comunidad: mensajes de WhatsApp, banderas de países, screenshots de alumnas celebrando. Montaje emocional pero con ritmo — no lento, no triste. Energía positiva.]</p>
-        </div>
-        <div class="vl">
-            <div class="vts">2:20 — 2:40 | BONUS — Lo que descubres dentro (20 seg)</div>
-            <p>"Y hay algo más. Algo que no esperas. Cuando empiezas a moverte con esta energía, algo cambia por dentro. Tu confianza. Tu autoestima. Cómo te ves. No es autoayuda. No es teoría. Es lo que pasa cuando tu cuerpo y tu mente se activan juntos."</p>
-            <p class="vd">[Roudy hablando con tono más íntimo, más cercano. B-roll: mujeres sonriendo después de clase, abrazándose, con cara de satisfacción. Transición suave. Música baja un poco — momento emocional.]</p>
-        </div>
-        <div class="vl">
-            <div class="vts">2:40 — 3:00 | OFERTA — Sin fricción (20 seg)</div>
-            <p>"Todo esto por 100 dólares al año. Menos de 30 céntimos al día. Menos que un café. Acceso completo a todo. Sin compromiso — cancela cuando quieras. Garantía de 7 días: si no sientes la energía, te devolvemos tu dinero. Sin preguntas."</p>
-            <p class="vd">[Roudy a cámara, quieto por primera vez desde el hook. Tono cercano, confidencial. Precio aparece en pantalla: $100/año tachando $144. Debajo: "0,27€ al día". Comparación visual: café 2€ vs EVOLXION 0,27€. Badge "Garantía 7 días" aparece.]</p>
-        </div>
-        <div class="vl">
-            <div class="vts">3:00 — 3:15 | CTA — Ahora o nunca (15 seg)</div>
-            <p><strong>"Haz clic abajo. Responde 4 preguntas rápidas. Y descubre si EVOLXION es para ti. Tu evolución puede empezar hoy. No mañana. No el lunes. Hoy."</strong></p>
-            <p class="vd">[Roudy señala abajo con determinación y sonrisa. Música sube al pico. Clase detrás bailando (split screen o fondo). Logo EVOLXION pulsa. Botón CTA con glow. Corte a negro. Silencio.]</p>
-        </div>
-    </div>
-
-    <div class="key-insight rv">
-        <h4>Notas de producción — VSL Cliente</h4>
-        <p><strong>Regla de oro:</strong> El 80% del vídeo es MOVIMIENTO. Roudy bailando, la gente sudando, energía de clase real. Solo se queda quieto a cámara en el hook (tensión) y en la oferta (confidencial). El resto del tiempo está en movimiento.<br>
-        <strong>Pre-hook visual:</strong> Los primeros 8 segundos son SOLO clase. Sin voz. La gente que viene de TikTok espera ver eso — si abres hablando, se van. Primero les das lo que quieren, luego les hablas.<br>
-        <strong>Música:</strong> Música propia de EVOLXION (Apple Music) durante TODO el vídeo excepto en el hook. Que se sienta la vibra real.<br>
-        <strong>Público objetivo:</strong> Mujeres 35+. Hablarles desde la empatía, nunca desde la superioridad. "Yo te entiendo" > "Tú no sabes". Son madres, trabajadoras, cansadas — pero quieren sentirse vivas.<br>
-        <strong>Desarrollo personal:</strong> Aparece SOLO en el bloque BONUS (2:20-2:40) y como consecuencia del movimiento, NO como promesa principal. Adrián fue claro: "no cambies el orden de los factores".<br>
-        <strong>Hooks para A/B testing (grabar los 3):</strong><br>
-        • Hook A: "Tu entrenamiento es un castigo. Y lo sabes."<br>
-        • Hook B: "Empezar y dejarlo. Ese es tu patrón. Y lo sabes."<br>
-        • Hook C: "¿Cuándo fue la última vez que hiciste algo solo para ti? Sin pensar en nadie más."<br>
-        <strong>Duración real hablada:</strong> ~470 palabras = 3:00-3:15 a ritmo natural con pausas dramáticas + 8 seg de pre-hook visual sin voz.<br>
-        <strong>Diferencia con el VSL actual (Elena):</strong> El VSL actual tiene a Elena hablando calmada de desarrollo personal sin movimiento. Adrián dijo textualmente: "no he visto ni una parte de baile" y "es una incongruencia bestial". Este nuevo VSL corrige eso: Roudy es la cara, el baile es el protagonista, el desarrollo es bonus.</p>
-    </div>
-
-    <div class="q rv">
-        <p>"La gente te ve a ti en TikTok reventándote y de repente sale tu mujer hablándole calmada de desarrollo personal. Es una incongruencia bestial. Cámbiale el enfoque. Tú sudando, explicándole que es EVOLXION con energía. Eso sí lo veo. En vez de una o dos ventas, haces 7."</p>
-        <div class="attr">— Adrián Lucena</div>
-    </div>
-</div></section>
-
-<!-- 07 QUIZ PAGE -->
-<section class="sec"><div class="c">
-    <div class="rv"><div class="sn">07 — Quiz Page</div>
-    <h2 class="st">El Filtro Que Elimina la Morralla</h2>
-    <p class="ss">Antes: la gente preguntaba por WhatsApp, pedía precio y desaparecía. Ahora: solo llegan los que pasan el filtro.</p></div>
-
-    <div class="g2">
-        <div class="rl">
-            <h3 style="font-family:'Space Grotesk';font-size:13px;font-weight:600;margin-bottom:14px;color:var(--primary)">Quiz Instructor (5 preguntas)</h3>
-            <div class="card"><p><strong>1.</strong> ¿Tienes experiencia dando clases de fitness, baile o deporte?</p><p style="font-size:12px;color:rgba(255,255,255,.4);margin-top:6px">Opciones: Sí, más de 2 años / Sí, menos de 2 años / No, pero quiero empezar</p><p style="font-size:11px;color:var(--primary);margin-top:4px">Filtro: Si dice "No" → sigue, pero baja prioridad en el CRM.</p></div>
-            <div class="card"><p><strong>2.</strong> ¿En qué país y ciudad te encuentras?</p><p style="font-size:12px;color:rgba(255,255,255,.4);margin-top:6px">Campo abierto (texto libre)</p><p style="font-size:11px;color:var(--primary);margin-top:4px">Filtro: Detecta zona para asignar licencia. Si ya hay 5 en esa zona → lista de espera.</p></div>
-            <div class="card"><p><strong>3.</strong> ¿Qué es lo que más te atrae de EVOLXION?</p><p style="font-size:12px;color:rgba(255,255,255,.4);margin-top:6px">Opciones: Tener mi propio negocio de fitness / Las coreografías y la metodología / La comunidad internacional / Todo lo anterior</p><p style="font-size:11px;color:var(--primary);margin-top:4px">Filtro: Cualquier respuesta vale. Sirve para personalizar el follow-up por WhatsApp.</p></div>
-            <div class="card"><p><strong>4.</strong> ¿Cuántas horas semanales puedes dedicar a formarte?</p><p style="font-size:12px;color:rgba(255,255,255,.4);margin-top:6px">Opciones: Menos de 3h / 3-5h / 5-10h / Más de 10h</p><p style="font-size:11px;color:var(--primary);margin-top:4px">Filtro: Menos de 3h → advertencia de que la certificación requiere compromiso.</p></div>
-            <div class="card"><p><strong>5.</strong> Si el programa encaja contigo, ¿podrías invertir 15-20€/mes en tu formación?</p><p style="font-size:12px;color:rgba(255,255,255,.4);margin-top:6px">Opciones: Sí, sin problema / Tendría que pensarlo / No en este momento</p><p style="font-size:11px;color:var(--primary);margin-top:4px">Filtro: "No" → se descarta. "Tendría que pensarlo" → entra pero con tag de objeción precio.</p></div>
-        </div>
-        <div class="rr">
-            <h3 style="font-family:'Space Grotesk';font-size:13px;font-weight:600;margin-bottom:14px;color:var(--primary)">Quiz Cliente (4 preguntas)</h3>
-            <div class="card"><p><strong>1.</strong> ¿Cuál es tu objetivo principal ahora mismo?</p><p style="font-size:12px;color:rgba(255,255,255,.4);margin-top:6px">Opciones: Sentirme mejor conmigo misma / Perder peso de forma divertida / Tener más energía / Conectar con una comunidad</p><p style="font-size:11px;color:var(--primary);margin-top:4px">Filtro: Todas valen. Sirve para segmentar el email de bienvenida y el primer mensaje de WhatsApp.</p></div>
-            <div class="card"><p><strong>2.</strong> ¿Has intentado entrenar antes y lo dejaste?</p><p style="font-size:12px;color:rgba(255,255,255,.4);margin-top:6px">Opciones: Sí, varias veces / Sí, una vez / No, es mi primera vez</p><p style="font-size:11px;color:var(--primary);margin-top:4px">Filtro: "Sí, varias veces" → mensaje de empatía en el follow-up. Es el público ideal.</p></div>
-            <div class="card"><p><strong>3.</strong> ¿Cuántos días a la semana podrías dedicar 30 minutos a moverte?</p><p style="font-size:12px;color:rgba(255,255,255,.4);margin-top:6px">Opciones: 1-2 días / 3-4 días / 5+ días</p><p style="font-size:11px;color:var(--primary);margin-top:4px">Filtro: Todas valen. Sirve para recomendar plan (mensual vs anual).</p></div>
-            <div class="card"><p><strong>4.</strong> Si encontraras algo que realmente encaje contigo, ¿podrías invertir menos de 10€/mes?</p><p style="font-size:12px;color:rgba(255,255,255,.4);margin-top:6px">Opciones: Sí, totalmente / Depende de lo que incluya / No ahora mismo</p><p style="font-size:11px;color:var(--primary);margin-top:4px">Filtro: "No" → se descarta (no tiene ni un chavo). "Depende" → entra con secuencia de valor antes de oferta.</p></div>
-        </div>
-    </div>
-
-    <div class="q rv">
-        <p>"El quiz page te ventila toda la morralla. Si te dice que no puede invertir ni 10€, pues es lo que hay. Ya te está diciendo que no tiene ni un chavo. Y tú no pierdes tiempo en WhatsApp con esa persona."</p>
-        <div class="attr">— Adrián Lucena</div>
-    </div>
-</div></section>
-
-<!-- 08 COPIES ADS -->
-<section class="sec"><div class="c">
-    <div class="rv"><div class="sn">08 — Copies de Anuncios</div>
-    <h2 class="st">Anuncios Meta — Listos Para Copiar y Lanzar</h2>
-    <p class="ss">Pain First. Hook agresivo. Sin rodeos. La primera frase tiene que doler tanto que no puedan seguir scrolleando. Segmentación: audiencia propia (seguidores) + lookalike 1% de compradores.</p></div>
-
-    <h3 style="font-family:'Space Grotesk';font-size:12px;font-weight:700;margin:22px 0 14px;color:var(--accent-light)" class="rv">INSTRUCTORES (5 VARIANTES)</h3>
-
-    <div class="ad rl">
-        <span class="at">01 — El Precio de Tu Pasión</span>
-        <div class="ah">"15€ por clase. Eso es lo que cobras después de años formándote, madrugar y aguantar a un dueño de gimnasio que puede sustituirte mañana."</div>
-        <div class="ab">
-            <p>No tienes marca. No tienes web. No tienes sistema. Cada mes empiezas de cero rezando para que no te quiten horas.</p>
-            <p style="margin-top:10px">Mientras tanto, los instructores EVOLXION tienen su propia web con su nombre, 15 coreografías exclusivas, anuncios que les traen clientes mientras duermen, una comunidad internacional y una licencia oficial. Todo por menos de lo que pagas de gasolina al mes.</p>
-            <p style="margin-top:10px">10 millones de seguidores respaldan esta marca. Solo 5 licencias por zona. Cuando se llenen, se llenen.</p>
-        </div>
-        <span class="ac">Responde 5 preguntas y descubre si tienes lo que hace falta →</span>
-    </div>
-
-    <div class="ad rl">
-        <span class="at">02 — La Certificación de Fin de Semana</span>
-        <div class="ah">"80€. Un fin de semana. Y ya eres ‘instructor certificado’. ¿De verdad crees que eso vale algo?"</div>
-        <div class="ab">
-            <p>Zumba te certifica en 48 horas. Y luego qué. Sales a competir con 200 instructores más en tu ciudad que tienen exactamente lo mismo que tú. Las mismas canciones. Los mismos pasos. Cero diferenciación.</p>
-            <p style="margin-top:10px">EVOLXION no es una certificación. Es un sistema completo: metodología propia, música original en Apple Music, tu web personal, anuncios que funcionan, formación en marca personal y mentorías en vivo. Un negocio llave en mano por 247$.</p>
-            <p style="margin-top:10px">Valor real: +3.000€. Precio: 247$ o 15€/mes. La decisión es obvia.</p>
-        </div>
-        <span class="ac">Aplicar a la certificación →</span>
-    </div>
-
-    <div class="ad rl">
-        <span class="at">03 — Tu Trabajo Te Está Matando</span>
-        <div class="ah">"Tu trabajo te está apagando. Lo sabes. Lo sientes cada lunes. Y sigues ahí porque no ves otra salida."</div>
-        <div class="ab">
-            <p>Amas bailar. Amas el fitness. Pero no tienes ni puta idea de cómo convertir eso en algo que te dé de comer de verdad. Sin depender de un gimnasio. Sin cobrar migajas.</p>
-            <p style="margin-top:10px">EVOLXION te forma como líder en baile fitness emocional. No sales con un diploma inútil — sales con un negocio montado: web, anuncios, coreografías, comunidad, marca. Todo.</p>
-            <p style="margin-top:10px">Ya hay instructores en España, Alemania, Brasil y Francia que empezaron exactamente donde tú estás ahora.</p>
-        </div>
-        <span class="ac">Descubre cómo vivir de lo que te apasiona →</span>
-    </div>
-
-    <div class="ad rl">
-        <span class="at">04 — Exclusividad Brutal</span>
-        <div class="ah">"No buscamos instructores. Buscamos 5 personas por zona que quieran construir algo real."</div>
-        <div class="ab">
-            <p>EVOLXION no certifica a cualquiera. No es un curso online más. No es un PDF con pasos de baile. Es una licencia exclusiva con territorio protegido.</p>
-            <p style="margin-top:10px">Cuando las 5 plazas de tu zona se llenen, se acabaron. No hay lista de espera. No hay segunda oportunidad. O entras ahora o esperas a que alguien se vaya.</p>
-            <p style="margin-top:10px">10 millones de seguidores. Música propia. Metodología única. Comunidad en 6 países. Esto no es Zumba.</p>
-        </div>
-        <span class="ac">Demuestra que tienes lo que hace falta →</span>
-    </div>
-
-    <div class="ad rl">
-        <span class="at">05 — El Instructor Invisible</span>
-        <div class="ah">"Llevas años dando clases y nadie sabe tu nombre. Ni tus alumnos te buscan en redes."</div>
-        <div class="ab">
-            <p>No tienes marca personal. No tienes presencia digital. Eres intercambiable. Mañana te cambian por alguien más barato y ni te avisan.</p>
-            <p style="margin-top:10px">Los instructores EVOLXION tienen su propia web con subdominio, contenido que les posiciona como referentes, una metodología que nadie más tiene y una marca de 10 millones de seguidores detrás.</p>
-            <p style="margin-top:10px">Tú decides: seguir siendo invisible o construir algo con tu nombre.</p>
-        </div>
-        <span class="ac">Responde el quiz y empieza →</span>
-    </div>
-
-    <h3 style="font-family:'Space Grotesk';font-size:12px;font-weight:700;margin:36px 0 14px;color:var(--accent-light)" class="rv">CLIENTES MEMBRESÍA (5 VARIANTES)</h3>
-
-    <div class="ad rr">
-        <span class="at">01 — El Castigo</span>
-        <div class="ah">"Tu entrenamiento es un castigo. Y lo sabes. Cada minuto se te hace eterno. Y al final siempre pasa lo mismo: lo dejas."</div>
-        <div class="ab">
-            <p>No es que no quieras cuidarte. Es que lo que haces no te engancha. No te emociona. No te hace sentir viva. Por eso lo dejas una y otra vez.</p>
-            <p style="margin-top:10px">EVOLXION fusiona baile y fitness para que estar en forma sea la mejor parte de tu día. Sudas, bailas, te llenas de energía — y no quieres parar. Desde tu casa. Con música original. Con una comunidad de 12 países.</p>
-            <p style="margin-top:10px">$100 al año. Menos de 30 céntimos al día. Garantía 7 días. Si no te engancha, te devolvemos tu dinero.</p>
-        </div>
-        <span class="ac">Descubre si EVOLXION es para ti →</span>
-    </div>
-
-    <div class="ad rr">
-        <span class="at">02 — El Patrón</span>
-        <div class="ah">"Empezar y dejarlo. Empezar y dejarlo. Empezar y dejarlo. Ese es tu patrón. Y cada vez te sientes peor."</div>
-        <div class="ab">
-            <p>No te falta motivación. No te falta fuerza de voluntad. Lo que te falta es algo tan adictivo que el problema sea NO ir. Algo que te haga sentir tan bien que lo eches de menos cuando no lo haces.</p>
-            <p style="margin-top:10px">Eso es EVOLXION Experience. Bailas, sudas, te conectas contigo misma. Y no quieres parar. Nunca. Personas de España, México, Argentina, Alemania y Francia ya están dentro.</p>
-            <p style="margin-top:10px">Por menos de lo que cuesta un café a la semana. Sin compromiso. Cancela cuando quieras.</p>
-        </div>
-        <span class="ac">Rompe el patrón hoy →</span>
-    </div>
-
-    <div class="ad rr">
-        <span class="at">03 — Te Has Olvidado de Ti</span>
-        <div class="ah">"¿Cuándo fue la última vez que hiciste algo solo para ti? Sin pensar en nadie más. Sin sentir culpa."</div>
-        <div class="ab">
-            <p>Entre el trabajo, los hijos, la casa y las mil cosas del día... te has olvidado de ti. Y se nota. En tu energía. En tu ánimo. En cómo te ves al espejo. En cómo te sientes cuando te acuestas.</p>
-            <p style="margin-top:10px">EVOLXION es TU espacio. 30 minutos para reconectar con tu cuerpo, tu energía y tu autoestima. Sin filtros. Sin perfección. Sin juicio. Solo tú, la música y el movimiento.</p>
-            <p style="margin-top:10px">Más de 10 millones de personas siguen esta comunidad. $100 al año. Acceso inmediato.</p>
-        </div>
-        <span class="ac">Empieza hoy. No mañana. Hoy. →</span>
-    </div>
-
-    <div class="ad rr">
-        <span class="at">04 — No Es Fitness</span>
-        <div class="ah">"Esto no es fitness. Esto no es una clase. Esto es lo que pasa cuando dejas de obligarte y empiezas a disfrutar."</div>
-        <div class="ab">
-            <p>El gimnasio es una obligación. Las pesas son aburridas. Correr es un castigo. Y tú lo sabes porque llevas años intentando que te guste y no te gusta.</p>
-            <p style="margin-top:10px">EVOLXION Experience es diferente. Bailas con música original. Sudas sin darte cuenta. Te llenas de energía. Y cuando terminas, quieres más. No menos. Más.</p>
-            <p style="margin-top:10px">Método EVOLXION BURN: tu cuerpo sigue quemando calorías 24 horas después. Sesiones ilimitadas. Comunidad internacional. $100/año.</p>
-        </div>
-        <span class="ac">Pruébalo 7 días sin riesgo →</span>
-    </div>
-
-    <div class="ad rr">
-        <span class="at">05 — La Excusa del Tiempo</span>
-        <div class="ah">"No tengo tiempo. Esa es tu excusa favorita. Pero tienes 30 minutos para Netflix cada noche."</div>
-        <div class="ab">
-            <p>No es tiempo lo que te falta. Es algo que merezca la pena. Algo que en 30 minutos te haga sentir más viva que 2 horas en el gimnasio.</p>
-            <p style="margin-top:10px">EVOLXION Experience. Desde tu casa. A tu hora. Sin desplazamientos. Sin excusas. Bailas, sudas, te activas — y sigues con tu día con una energía que no tenías.</p>
-            <p style="margin-top:10px">Mujeres de 12 países ya lo hacen. Cada día. Porque es tan adictivo que el problema es NO hacerlo. 0,27€ al día.</p>
-        </div>
-        <span class="ac">Descubre tu experiencia →</span>
-    </div>
-
-    <div class="key-insight rv" style="margin-top:28px">
-        <h4>Notas para Meta Ads Manager</h4>
-        <p><strong>Segmentación Instructores:</strong> Audiencia personalizada de seguidores de EVOLXION en todas las plataformas + Lookalike 1% de los que ya han comprado la formación. Intereses: instructor fitness, Zumba, baile, emprendimiento fitness.<br>
-        <strong>Segmentación Clientes:</strong> Audiencia personalizada de seguidores + Lookalike 1%. Mujeres 30-55. Intereses: fitness en casa, baile, bienestar, yoga, pérdida de peso.<br>
-        <strong>Formato recomendado:</strong> Vídeo vertical 9:16 (Reels/Stories) con los primeros 3 seg del hook hablado + subtítulos grandes. También probar imagen estática con el hook como texto grande sobre foto de clase.<br>
-        <strong>Presupuesto inicial:</strong> 5€/día por variante durante 5 días. Matar las que no pasen de 2% CTR. Escalar las ganadoras a 20€/día.<br>
-        <strong>Objetivo de campaña:</strong> Conversiones (quiz completado). No tráfico. No alcance. Conversiones.</p>
-    </div>
-</div></section>
-
-<!-- 09 GRABACIÓN -->
-<section class="sec"><div class="c">
-    <div class="rv"><div class="sn">09 — Grabación</div>
-    <h2 class="st">Lo Que Roudy Tiene Que Grabar (Priorizado)</h2></div>
-
-    <div class="g2">
-        <div class="card rl">
-            <div class="ct" style="color:#ef4444">Primero (esta semana)</div>
-            <ul class="cl">
-                <li>VSL Instructor: 2:30 min en la sala, sudando, con energía</li>
-                <li>3 hooks diferentes de 15 seg (para A/B en Meta)</li>
-                <li>B-roll de clase real con máxima energía (mínimo 2 min)</li>
-                <li>Clip de 15 seg diciendo "¿Te gustaría ser instructor de EVOLXION?"</li>
-            </ul>
-        </div>
-        <div class="card rr">
-            <div class="ct" style="color:#f59e0b">Después (semana 2)</div>
-            <ul class="cl">
-                <li>VSL Cliente: 2:00 min (Roudy moviéndose, no quieto)</li>
-                <li>Testimonios de 2-3 instructores actuales (30 seg cada uno)</li>
-                <li>Clip de clase cortado a la mitad ("¿La quieres entera? Enlace abajo")</li>
-                <li>Before/After emocional de alumnos (no físico, emocional)</li>
-            </ul>
-        </div>
-    </div>
-</div></section>
-
-<!-- 10 AUDITORÍA WEB -->
-<section class="sec"><div class="c">
-    <div class="rv"><div class="sn">10 — Auditoría Web</div>
-    <h2 class="st">experience.evolxion.com — Estado Actual</h2></div>
-
-    <table class="tbl rv">
-        <thead><tr><th>Elemento</th><th>Estado</th><th>Acción</th></tr></thead>
-        <tbody>
-            <tr><td>Landing Cliente</td><td style="color:#22c55e">Existe</td><td>Añadir quiz + Content Locker + más clips de clase</td></tr>
-            <tr><td>Landing Instructor</td><td style="color:#ef4444">No existe</td><td>Crear con VSL de Roudy</td></tr>
-            <tr><td>VSL Cliente</td><td style="color:#f59e0b">Existe (Elena)</td><td>Regrabar con Roudy como cara + clips de clase</td></tr>
-            <tr><td>VSL Instructor</td><td style="color:#ef4444">No existe</td><td>Grabar con guión de arriba</td></tr>
-            <tr><td>Quiz Page</td><td style="color:#ef4444">No existe</td><td>Crear 2 (instructor + cliente)</td></tr>
-            <tr><td>CRM</td><td style="color:#ef4444">No conectado</td><td>GoHighLevel — pipeline automático</td></tr>
-            <tr><td>Bot WhatsApp</td><td style="color:#ef4444">No existe</td><td>Seguimiento + urgencia + agenda</td></tr>
-            <tr><td>Anuncios Meta</td><td style="color:#ef4444">0€ invertidos</td><td>Lanzar con copies de este doc</td></tr>
-            <tr><td>Financiación</td><td style="color:#ef4444">No disponible</td><td>Pagos fraccionados (15-20€/mes)</td></tr>
-            <tr><td>Web por instructor</td><td style="color:#ef4444">No implementada</td><td>Template GHL + subdominio</td></tr>
-            <tr><td>Content Locker</td><td style="color:#ef4444">No activo</td><td>Activar en ambas landings</td></tr>
-        </tbody>
-    </table>
-</div></section>
-
-<!-- CTA -->
-<section class="cta-s">
-<div class="c rs">
-    <h2 class="st" style="text-align:center;margin-bottom:12px">Siguiente Paso</h2>
-    <p style="text-align:center;color:var(--muted);margin-bottom:32px;font-size:14px">Grabar VSL, montar embudos, conectar CRM y lanzar anuncios a la audiencia propia.</p>
-    <div style="text-align:center"><a href="https://focusconsultor.com" target="_blank" class="cta-btn">Agendar Sesión en Focus Consultor</a></div>
 </div>
 </section>
 
-<footer><div class="c"><p><a href="https://focusconsultor.com" target="_blank">FOCUS Consulting Group</a> · Adrián Lucena</p></div></footer>
+<!-- 03 EMBUDO CLIENTE -->
+<section class="section">
+<div class="container">
+    <div class="reveal"><div class="section-num">03 &mdash; Embudo de Captaci&oacute;n</div>
+    <h2 class="section-title">Vertical Cliente &mdash; 5 Pasos</h2>
+    <p class="section-desc">Audiencia caliente de redes sociales directa a membres&iacute;a. Modelo Eli: contenido gratuito que engancha, quiz que filtra, pago que cierra.</p></div>
+
+    <div class="funnel-container">
+        <div class="funnel-step reveal">
+            <div class="funnel-num">1</div>
+            <div class="funnel-content">
+                <h4>Contenido org&aacute;nico (TikTok/IG/FB)</h4>
+                <p>Clips de clase real. Energ&iacute;a m&aacute;xima. Cortar a la mitad: &ldquo;&iquest;La quieres entera? Enlace abajo.&rdquo;</p>
+            </div>
+        </div>
+        <div class="funnel-step reveal">
+            <div class="funnel-num">2</div>
+            <div class="funnel-content">
+                <h4>Landing con VSL de Roudy</h4>
+                <p>V&iacute;deo 3:15 min. 80% movimiento, 20% a c&aacute;mara. Pre-hook visual de 8 seg sin voz.</p>
+            </div>
+        </div>
+        <div class="funnel-step reveal">
+            <div class="funnel-num">3</div>
+            <div class="funnel-content">
+                <h4>Quiz Page (4 preguntas)</h4>
+                <p>Filtra por objetivo, historial de abandono, disponibilidad y capacidad de inversi&oacute;n (&lt;10&euro;/mes).</p>
+            </div>
+        </div>
+        <div class="funnel-step reveal">
+            <div class="funnel-num">4</div>
+            <div class="funnel-content">
+                <h4>Oferta + Pago directo</h4>
+                <p>$100/a&ntilde;o o $12/mes. Garant&iacute;a 7 d&iacute;as. Sin llamada. Pago inmediato tras quiz.</p>
+            </div>
+        </div>
+        <div class="funnel-step reveal">
+            <div class="funnel-num">5</div>
+            <div class="funnel-content">
+                <h4>Onboarding + Comunidad</h4>
+                <p>Acceso a EVOLXION Experience, sesiones EMOXION, comunidad privada internacional.</p>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- 04 OFERTA -->
+<section class="section">
+<div class="container">
+    <div class="reveal"><div class="section-num">04 &mdash; Oferta Irresistible</div>
+    <h2 class="section-title">Stack de Valor &mdash; Instructor</h2></div>
+
+    <table class="tbl reveal">
+        <thead><tr><th>Componente</th><th>Valor percibido</th></tr></thead>
+        <tbody>
+            <tr><td>15 coreograf&iacute;as oficiales EVOLXION</td><td>800 &euro;</td></tr>
+            <tr><td>Metodolog&iacute;a exclusiva + manual del instructor</td><td>500 &euro;</td></tr>
+            <tr><td>Web personal con subdominio</td><td>400 &euro;</td></tr>
+            <tr><td>Formaci&oacute;n en marca personal + marketing + IA</td><td>600 &euro;</td></tr>
+            <tr><td>Mentor&iacute;as grupales en vivo</td><td>500 &euro;</td></tr>
+            <tr><td>Licencia oficial + comunidad internacional</td><td>450 &euro;</td></tr>
+            <tr><td><strong>Total percibido</strong></td><td><strong>+3.250 &euro;</strong></td></tr>
+            <tr><td><strong>Precio real</strong></td><td><strong>247$ (o 15&euro;/mes)</strong></td></tr>
+        </tbody>
+    </table>
+
+    <div class="insight reveal">
+        <div class="insight-label">Comparativa clave</div>
+        <p><strong>Zumba:</strong> 80&euro; &rarr; certificaci&oacute;n de fin de semana &rarr; 0 diferenciaci&oacute;n &rarr; 200 instructores iguales en tu ciudad.<br>
+        <strong>EVOLXION:</strong> 247$ &rarr; sistema completo &rarr; m&uacute;sica propia &rarr; web personal &rarr; territorio protegido &rarr; 10M seguidores detr&aacute;s.</p>
+    </div>
+</div>
+</section>
+
+<!-- 05 VSL INSTRUCTOR -->
+<section class="section">
+<div class="container">
+    <div class="reveal"><div class="section-num">05 &mdash; Gui&oacute;n VSL</div>
+    <h2 class="section-title">Instructor &mdash; 3:00 min</h2>
+    <p class="section-desc">Roudy directo a c&aacute;mara. En el gimnasio. Con energ&iacute;a. Sudando. Que se sienta la clase.</p></div>
+
+    <div class="vsl-block reveal">
+        <div class="vsl-label">Gui&oacute;n VSL &mdash; Instructor</div>
+        
+        <div class="vsl-line">
+            <div class="vsl-time">0:00 &mdash; 0:15 | HOOK (directo al dolor)</div>
+            <p>&ldquo;15 euros por clase. Eso es lo que cobras. Y encima dependes de un gimnasio que te puede sustituir ma&ntilde;ana. Despu&eacute;s de a&ntilde;os form&aacute;ndote, de madrugar, de aguantar a un due&ntilde;o que ni recuerda tu nombre.&rdquo;</p>
+            <p class="vsl-dir">[Roudy a c&aacute;mara, plano medio, en la sala vac&iacute;a. Luz dura. Sin m&uacute;sica. Pausa de 1 seg al final.]</p>
+        </div>
+        
+        <div class="vsl-line">
+            <div class="vsl-time">0:15 &mdash; 0:35 | AUTORIDAD (por qu&eacute; escucharme)</div>
+            <p>&ldquo;Soy Roudy. Llevo 8 a&ntilde;os en el fitness. M&aacute;s de 10 millones de personas nos siguen en redes. Nuestra m&uacute;sica est&aacute; en Apple Music. Tenemos instructores en 6 pa&iacute;ses. Y todo esto lo construimos sin un euro en ads.&rdquo;</p>
+            <p class="vsl-dir">[Roudy empezando a moverse. M&uacute;sica sube. B-roll: n&uacute;meros de seguidores en pantalla, clips de clases internacionales.]</p>
+        </div>
+        
+        <div class="vsl-line">
+            <div class="vsl-time">0:35 &mdash; 0:55 | EMPAT&Iacute;A + MOVIMIENTO</div>
+            <p>&ldquo;Yo he estado exactamente donde t&uacute; est&aacute;s. Dando clases por cuatro duros. Sin marca. Sin sistema. Cada mes empezando de cero. Y un d&iacute;a dije: se acab&oacute;.&rdquo;</p>
+            <p class="vsl-dir">[Corte a Roudy empezando a moverse. M&uacute;sica sube. B-roll: instructor solo recogiendo material, luces apag&aacute;ndose. Contraste.]</p>
+        </div>
+        
+        <div class="vsl-line">
+            <div class="vsl-time">0:55 &mdash; 1:10 | PUENTE (mostrar el contraste)</div>
+            <p>&ldquo;&iquest;Y si pudieras tener tu propia marca? Tu web con tu nombre. Tus anuncios funcionando mientras duermes. 15 coreograf&iacute;as listas. Una comunidad internacional detr&aacute;s de ti. Todo por menos de lo que pagas de gasolina.&rdquo;</p>
+            <p class="vsl-dir">[Transici&oacute;n: clase EVOLXION a tope. Gente bailando, sudando, energ&iacute;a m&aacute;xima. Roudy liderando. Se siente la vibra.]</p>
+        </div>
+        
+        <div class="vsl-line">
+            <div class="vsl-time">1:10 &mdash; 1:50 | SOLUCI&Oacute;N (r&aacute;pido, con ritmo)</div>
+            <p>&ldquo;EVOLXION no es una certificaci&oacute;n de fin de semana. Es un sistema completo. Te damos las coreograf&iacute;as, la metodolog&iacute;a, el marketing, la IA, tu propia web, anuncios que ya convierten, mentor&iacute;as en vivo y una licencia oficial. Un negocio llave en mano.&rdquo;</p>
+            <p class="vsl-dir">[Montaje r&aacute;pido: pantalla de web del instructor, anuncios en Meta, comunidad WhatsApp, coreograf&iacute;as, Roudy en mentor&iacute;a. Ritmo alto.]</p>
+        </div>
+        
+        <div class="vsl-line">
+            <div class="vsl-time">1:50 &mdash; 2:15 | PRUEBA SOCIAL</div>
+            <p>&ldquo;Ya hay instructores en Espa&ntilde;a, Alemania, Brasil y Francia que empezaron sin nada. Hoy tienen su marca, sus clientes y su negocio digital funcionando.&rdquo;</p>
+            <p class="vsl-dir">[Testimonios reales de instructores. Clips de sus clases. Capturas de sus webs con subdominio. Banderas de pa&iacute;ses.]</p>
+        </div>
+        
+        <div class="vsl-line">
+            <div class="vsl-time">2:15 &mdash; 2:40 | OBJECI&Oacute;N (romper barrera de precio)</div>
+            <p>&ldquo;El valor real de todo esto supera los 3.000 euros. Pero no te voy a pedir eso. El precio es 247 d&oacute;lares. O si lo prefieres, 15 euros al mes. Menos de lo que gastas en caf&eacute;.&rdquo;</p>
+            <p class="vsl-dir">[Roudy quieto por primera vez. Mirando a c&aacute;mara. Tono serio. N&uacute;meros en pantalla.]</p>
+        </div>
+        
+        <div class="vsl-line">
+            <div class="vsl-time">2:40 &mdash; 3:00 | CTA (escasez + filtro)</div>
+            <p>&ldquo;Esto no es para todo el mundo. Solo hay 5 licencias por zona. Si crees que tienes lo que hace falta, haz clic abajo. Responde 5 preguntas y demu&eacute;stralo.&rdquo;</p>
+            <p class="vsl-dir">[Roudy se&ntilde;ala abajo. Energ&iacute;a sube al m&aacute;ximo. M&uacute;sica pico. Corte a negro &rarr; Logo EVOLXION &rarr; Bot&oacute;n CTA.]</p>
+        </div>
+        
+        <div class="vsl-hooks">
+            <h5>Hooks alternativos para A/B testing</h5>
+            <ul>
+                <li>&ldquo;80 euros. Un fin de semana. Y ya eres instructor certificado. &iquest;De verdad crees que eso vale algo?&rdquo;</li>
+                <li>&ldquo;Llevas a&ntilde;os dando clases y nadie sabe tu nombre. Ni tus alumnos te buscan en redes.&rdquo;</li>
+                <li>&ldquo;Tu trabajo te est&aacute; apagando. Lo sabes. Lo sientes cada lunes.&rdquo;</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- 06 VSL CLIENTE -->
+<section class="section">
+<div class="container">
+    <div class="reveal"><div class="section-num">06 &mdash; Gui&oacute;n VSL</div>
+    <h2 class="section-title">Cliente Membres&iacute;a &mdash; 3:15 min</h2>
+    <p class="section-desc">80% movimiento. Roudy solo para en el hook y la oferta. El resto: bailando, sudando, liderando clase.</p></div>
+
+    <div class="vsl-block reveal">
+        <div class="vsl-label">Gui&oacute;n VSL &mdash; Cliente</div>
+        
+        <div class="vsl-line">
+            <div class="vsl-time">0:00 &mdash; 0:08 | PRE-HOOK VISUAL (sin voz)</div>
+            <p>[8 segundos de clase REAL. M&uacute;sica EVOLXION a tope. Gente bailando, sudando, sonriendo. Sin voz. Sin texto. Solo la experiencia.]</p>
+            <p class="vsl-dir">[La audiencia de TikTok espera ver movimiento. Si abres hablando, se van. Este clip retiene.]</p>
+        </div>
+        
+        <div class="vsl-line">
+            <div class="vsl-time">0:08 &mdash; 0:20 | HOOK (el castigo)</div>
+            <p>&ldquo;Tu entrenamiento es un castigo. Y lo sabes. Te obligas a moverte porque sabes que lo necesitas, pero cada minuto se te hace eterno. Y al final siempre pasa lo mismo: lo dejas.&rdquo;</p>
+            <p class="vsl-dir">[Roudy directo a c&aacute;mara. Fondo: gimnasio convencional vac&iacute;o, luces fr&iacute;as, m&aacute;quinas sin usar. Tono serio, sin m&uacute;sica. Pausa de 1 seg al final.]</p>
+        </div>
+        
+        <div class="vsl-line">
+            <div class="vsl-time">0:20 &mdash; 0:40 | EMPAT&Iacute;A (el ciclo)</div>
+            <p>&ldquo;Llevas meses &mdash; o a&ntilde;os &mdash; en ese ciclo. Empezar, dejarlo, volver a empezar. Y cada vez que lo dejas, te sientes peor. No te falta motivaci&oacute;n. Lo que te falta es algo tan adictivo que el problema sea NO ir.&rdquo;</p>
+            <p class="vsl-dir">[B-roll emocional: mujer en sof&aacute; mirando el m&oacute;vil, alarma del gym que ignora, ropa de deporte sin usar. Transici&oacute;n BRUSCA con flash a clase EVOLXION con energ&iacute;a brutal.]</p>
+        </div>
+        
+        <div class="vsl-line">
+            <div class="vsl-time">0:40 &mdash; 0:55 | TRANSICI&Oacute;N + AUTORIDAD</div>
+            <p>&ldquo;Ahora mira esto.&rdquo; [12 seg de clase real SIN CORTES] &ldquo;Soy Roudy. Llevo 8 a&ntilde;os en el fitness. M&aacute;s de 10 millones de personas nos siguen en redes. Y he creado algo que no existe en ning&uacute;n otro sitio.&rdquo;</p>
+            <p class="vsl-dir">[Flash blanco &rarr; 12 seg de clase real. Roudy movi&eacute;ndose, con energ&iacute;a creciente. Flash de n&uacute;meros de seguidores en pantalla (no m&aacute;s de 2 seg). Corte a clase real con gente sonriendo y sudando.]</p>
+        </div>
+        
+        <div class="vsl-line">
+            <div class="vsl-time">0:55 &mdash; 1:35 | SOLUCI&Oacute;N (qu&eacute; es EVOLXION)</div>
+            <p>&ldquo;EVOLXION Experience fusiona baile y fitness para que estar en forma sea la mejor parte de tu d&iacute;a. Liberas estr&eacute;s. Te llenas de energ&iacute;a. Disfrutas movi&eacute;ndote. Desde tu casa. A tu ritmo. Con m&uacute;sica original que hemos creado para que cada sesi&oacute;n sea una experiencia, no una obligaci&oacute;n.&rdquo;</p>
+            <p>&ldquo;Dentro tienes sesiones EMOXION completas, coreograf&iacute;as oficiales, el m&eacute;todo EVOLXION BURN para quemar calor&iacute;as 24 horas despu&eacute;s, activaci&oacute;n mental, comunidad privada internacional y contenido nuevo cada semana.&rdquo;</p>
+            <p class="vsl-dir">[Roudy bailando a tope, liderando clase. Montaje: gente de diferentes edades y pa&iacute;ses sudando, sonriendo, abraz&aacute;ndose al final. Se VE y se SIENTE la experiencia. M&uacute;sica propia de EVOLXION sonando. M&iacute;nimo 20 seg de clase real sin cortes.]</p>
+        </div>
+        
+        <div class="vsl-line">
+            <div class="vsl-time">1:35 &mdash; 2:05 | PRUEBA SOCIAL</div>
+            <p>&ldquo;Personas de Espa&ntilde;a, M&eacute;xico, Argentina, Alemania, Francia... ya est&aacute;n evolucionando juntas. Mujeres que llevaban a&ntilde;os sin hacer ejercicio. Que pensaban que esto no era para ellas. Y hoy no pueden parar.&rdquo;</p>
+            <p>&ldquo;Elena era una persona extremadamente t&iacute;mida. Casi ni hablaba. Hoy es instructora y lidera clases para cientos de personas. Eso es lo que pasa cuando encuentras algo que te transforma de verdad.&rdquo;</p>
+            <p class="vsl-dir">[Testimonios reales. Clips de alumnas. Elena hablando. Banderas de pa&iacute;ses. Energ&iacute;a positiva.]</p>
+        </div>
+        
+        <div class="vsl-line">
+            <div class="vsl-time">2:05 &mdash; 2:25 | BONUS (desarrollo personal)</div>
+            <p>&ldquo;Y hay algo m&aacute;s. Algo que no esperas. Cuando empiezas a moverte con EVOLXION, algo cambia dentro de ti. Tu autoestima sube. Tu energ&iacute;a sube. Tu forma de verte cambia. No porque te lo prometamos &mdash; porque es lo que pasa cuando te mueves con intenci&oacute;n.&rdquo;</p>
+            <p class="vsl-dir">[Roudy hablando mientras se mueve suavemente. Tono m&aacute;s &iacute;ntimo. M&uacute;sica baja. Momento de conexi&oacute;n.]</p>
+        </div>
+        
+        <div class="vsl-line">
+            <div class="vsl-time">2:25 &mdash; 2:55 | OFERTA</div>
+            <p>&ldquo;Todo esto &mdash; las sesiones ilimitadas, las coreograf&iacute;as, el m&eacute;todo BURN, la comunidad, la activaci&oacute;n mental, contenido nuevo cada semana &mdash; por 100 d&oacute;lares al a&ntilde;o. Eso son 27 c&eacute;ntimos al d&iacute;a. Menos de lo que cuesta un caf&eacute; a la semana.&rdquo;</p>
+            <p>&ldquo;Y si no te convence, tienes 7 d&iacute;as para probarlo. Si no te engancha, te devolvemos tu dinero. Sin preguntas.&rdquo;</p>
+            <p class="vsl-dir">[Roudy quieto por primera vez. Mirando a c&aacute;mara. Tono serio. N&uacute;meros en pantalla: $100/a&ntilde;o = 0,27&euro;/d&iacute;a.]</p>
+        </div>
+        
+        <div class="vsl-line">
+            <div class="vsl-time">2:55 &mdash; 3:15 | CTA</div>
+            <p>&ldquo;Hoy. No ma&ntilde;ana. No el lunes. Hoy. Haz clic abajo, responde 4 preguntas y empieza tu experiencia.&rdquo;</p>
+            <p class="vsl-dir">[Roudy se&ntilde;ala abajo. Energ&iacute;a sube. M&uacute;sica pico. Corte a negro &rarr; Logo EVOLXION &rarr; Bot&oacute;n CTA.]</p>
+        </div>
+        
+        <div class="vsl-hooks">
+            <h5>Hooks alternativos para A/B testing</h5>
+            <ul>
+                <li>&ldquo;Empezar y dejarlo. Empezar y dejarlo. Ese es tu patr&oacute;n. Y cada vez te sientes peor.&rdquo;</li>
+                <li>&ldquo;&iquest;Cu&aacute;ndo fue la &uacute;ltima vez que hiciste algo solo para ti? Sin sentir culpa.&rdquo;</li>
+                <li>&ldquo;No tengo tiempo. Esa es tu excusa favorita. Pero tienes 30 minutos para Netflix cada noche.&rdquo;</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- 07 QUIZ PAGE -->
+<section class="section">
+<div class="container">
+    <div class="reveal"><div class="section-num">07 &mdash; Quiz Page</div>
+    <h2 class="section-title">El Filtro Que Elimina la Morralla</h2>
+    <p class="section-desc">Antes: la gente preguntaba por WhatsApp, ped&iacute;a precio y desaparec&iacute;a. Ahora: solo llegan los que pasan el filtro.</p></div>
+
+    <div class="grid">
+        <div>
+            <h3 style="font-family:'Playfair Display',serif;font-size:15px;font-weight:600;color:var(--white);margin-bottom:14px">Quiz Instructor (5 preguntas)</h3>
+            <div class="quiz-card reveal"><strong>1.</strong><p>&iquest;Tienes experiencia dando clases de fitness, baile o deporte?</p><p class="quiz-options">Opciones: S&iacute;, m&aacute;s de 2 a&ntilde;os / S&iacute;, menos de 2 a&ntilde;os / No, pero quiero empezar</p><p class="quiz-filter">Filtro: &ldquo;No&rdquo; &rarr; sigue, pero baja prioridad en el CRM.</p></div>
+            <div class="quiz-card reveal"><strong>2.</strong><p>&iquest;En qu&eacute; pa&iacute;s y ciudad te encuentras?</p><p class="quiz-options">Campo abierto (texto libre)</p><p class="quiz-filter">Filtro: Detecta zona para asignar licencia. Si ya hay 5 en esa zona &rarr; lista de espera.</p></div>
+            <div class="quiz-card reveal"><strong>3.</strong><p>&iquest;Qu&eacute; es lo que m&aacute;s te atrae de EVOLXION?</p><p class="quiz-options">Opciones: Tener mi propio negocio / Las coreograf&iacute;as y la metodolog&iacute;a / La comunidad internacional / Todo lo anterior</p><p class="quiz-filter">Filtro: Cualquier respuesta vale. Sirve para personalizar el follow-up por WhatsApp.</p></div>
+            <div class="quiz-card reveal"><strong>4.</strong><p>&iquest;Cu&aacute;ntas horas semanales puedes dedicar a formarte?</p><p class="quiz-options">Opciones: Menos de 3h / 3-5h / 5-10h / M&aacute;s de 10h</p><p class="quiz-filter">Filtro: Menos de 3h &rarr; advertencia de que la certificaci&oacute;n requiere compromiso.</p></div>
+            <div class="quiz-card reveal"><strong>5.</strong><p>Si el programa encaja contigo, &iquest;podr&iacute;as invertir 15-20&euro;/mes en tu formaci&oacute;n?</p><p class="quiz-options">Opciones: S&iacute;, sin problema / Tendr&iacute;a que pensarlo / No en este momento</p><p class="quiz-filter">Filtro: &ldquo;No&rdquo; &rarr; se descarta. &ldquo;Tendr&iacute;a que pensarlo&rdquo; &rarr; entra con tag de objeci&oacute;n precio.</p></div>
+        </div>
+        <div>
+            <h3 style="font-family:'Playfair Display',serif;font-size:15px;font-weight:600;color:var(--white);margin-bottom:14px">Quiz Cliente (4 preguntas)</h3>
+            <div class="quiz-card reveal"><strong>1.</strong><p>&iquest;Cu&aacute;l es tu objetivo principal ahora mismo?</p><p class="quiz-options">Opciones: Sentirme mejor conmigo misma / Perder peso de forma divertida / Tener m&aacute;s energ&iacute;a / Conectar con una comunidad</p><p class="quiz-filter">Filtro: Todas valen. Sirve para segmentar el email de bienvenida y el primer mensaje de WhatsApp.</p></div>
+            <div class="quiz-card reveal"><strong>2.</strong><p>&iquest;Has intentado entrenar antes y lo dejaste?</p><p class="quiz-options">Opciones: S&iacute;, varias veces / S&iacute;, una vez / No, es mi primera vez</p><p class="quiz-filter">Filtro: &ldquo;S&iacute;, varias veces&rdquo; &rarr; mensaje de empat&iacute;a en el follow-up. Es el p&uacute;blico ideal.</p></div>
+            <div class="quiz-card reveal"><strong>3.</strong><p>&iquest;Cu&aacute;ntos d&iacute;as a la semana podr&iacute;as dedicar 30 minutos a moverte?</p><p class="quiz-options">Opciones: 1-2 d&iacute;as / 3-4 d&iacute;as / 5+ d&iacute;as</p><p class="quiz-filter">Filtro: Todas valen. Sirve para recomendar plan (mensual vs anual).</p></div>
+            <div class="quiz-card reveal"><strong>4.</strong><p>Si encontraras algo que realmente encaje contigo, &iquest;podr&iacute;as invertir menos de 10&euro;/mes?</p><p class="quiz-options">Opciones: S&iacute;, totalmente / Depende de lo que incluya / No ahora mismo</p><p class="quiz-filter">Filtro: &ldquo;No&rdquo; &rarr; se descarta. &ldquo;Depende&rdquo; &rarr; entra con secuencia de valor antes de oferta.</p></div>
+        </div>
+    </div>
+
+    <div class="quote reveal">
+        <p>&ldquo;El quiz page te ventila toda la morralla. Si te dice que no puede invertir ni 10&euro;, pues es lo que hay. Ya te est&aacute; diciendo que no tiene ni un chavo. Y t&uacute; no pierdes tiempo en WhatsApp con esa persona.&rdquo;</p>
+        <div class="quote-attr">&mdash; Adri&aacute;n Lucena</div>
+    </div>
+</div>
+</section>
+
+<!-- 08 COPIES ADS -->
+<section class="section">
+<div class="container">
+    <div class="reveal"><div class="section-num">08 &mdash; Copies de Anuncios</div>
+    <h2 class="section-title">Anuncios Meta &mdash; Listos Para Copiar y Lanzar</h2>
+    <p class="section-desc">Pain First. Hook agresivo. La primera frase tiene que doler tanto que no puedan seguir scrolleando. Segmentaci&oacute;n: audiencia propia (seguidores) + lookalike 1% de compradores.</p></div>
+
+    <h3 style="font-family:'Playfair Display',serif;font-size:14px;font-weight:600;color:var(--gold);margin:28px 0 16px" class="reveal">Instructores &mdash; 5 variantes</h3>
+
+    <div class="ad-block reveal">
+        <div class="ad-tag">01 &mdash; El Precio de Tu Pasi&oacute;n</div>
+        <div class="ad-hook">&ldquo;15&euro; por clase. Eso es lo que cobras despu&eacute;s de a&ntilde;os form&aacute;ndote, madrugar y aguantar a un due&ntilde;o de gimnasio que puede sustituirte ma&ntilde;ana.&rdquo;</div>
+        <div class="ad-body">
+            <p>No tienes marca. No tienes web. No tienes sistema. Cada mes empiezas de cero rezando para que no te quiten horas.</p>
+            <p>Mientras tanto, los instructores EVOLXION tienen su propia web con su nombre, 15 coreograf&iacute;as exclusivas, anuncios que les traen clientes mientras duermen, una comunidad internacional y una licencia oficial. Todo por menos de lo que pagas de gasolina al mes.</p>
+            <p>10 millones de seguidores respaldan esta marca. Solo 5 licencias por zona. Cuando se llenen, se llenen.</p>
+        </div>
+        <span class="ad-cta">Responde 5 preguntas y descubre si tienes lo que hace falta &rarr;</span>
+    </div>
+
+    <div class="ad-block reveal">
+        <div class="ad-tag">02 &mdash; La Certificaci&oacute;n de Fin de Semana</div>
+        <div class="ad-hook">&ldquo;80&euro;. Un fin de semana. Y ya eres &lsquo;instructor certificado&rsquo;. &iquest;De verdad crees que eso vale algo?&rdquo;</div>
+        <div class="ad-body">
+            <p>Zumba te certifica en 48 horas. Y luego qu&eacute;. Sales a competir con 200 instructores m&aacute;s en tu ciudad que tienen exactamente lo mismo que t&uacute;. Las mismas canciones. Los mismos pasos. Cero diferenciaci&oacute;n.</p>
+            <p>EVOLXION no es una certificaci&oacute;n. Es un sistema completo: metodolog&iacute;a propia, m&uacute;sica original en Apple Music, tu web personal, anuncios que funcionan, formaci&oacute;n en marca personal y mentor&iacute;as en vivo. Un negocio llave en mano por 247$.</p>
+            <p>Valor real: +3.000&euro;. Precio: 247$ o 15&euro;/mes. La decisi&oacute;n es obvia.</p>
+        </div>
+        <span class="ad-cta">Aplicar a la certificaci&oacute;n &rarr;</span>
+    </div>
+
+    <div class="ad-block reveal">
+        <div class="ad-tag">03 &mdash; Tu Trabajo Te Est&aacute; Matando</div>
+        <div class="ad-hook">&ldquo;Tu trabajo te est&aacute; apagando. Lo sabes. Lo sientes cada lunes. Y sigues ah&iacute; porque no ves otra salida.&rdquo;</div>
+        <div class="ad-body">
+            <p>Amas bailar. Amas el fitness. Pero no tienes ni puta idea de c&oacute;mo convertir eso en algo que te d&eacute; de comer de verdad. Sin depender de un gimnasio. Sin cobrar migajas.</p>
+            <p>EVOLXION te forma como l&iacute;der en baile fitness emocional. No sales con un diploma in&uacute;til &mdash; sales con un negocio montado: web, anuncios, coreograf&iacute;as, comunidad, marca. Todo.</p>
+            <p>Ya hay instructores en Espa&ntilde;a, Alemania, Brasil y Francia que empezaron exactamente donde t&uacute; est&aacute;s ahora.</p>
+        </div>
+        <span class="ad-cta">Descubre c&oacute;mo vivir de lo que te apasiona &rarr;</span>
+    </div>
+
+    <div class="ad-block reveal">
+        <div class="ad-tag">04 &mdash; Exclusividad Brutal</div>
+        <div class="ad-hook">&ldquo;No buscamos instructores. Buscamos 5 personas por zona que quieran construir algo real.&rdquo;</div>
+        <div class="ad-body">
+            <p>EVOLXION no certifica a cualquiera. No es un curso online m&aacute;s. No es un PDF con pasos de baile. Es una licencia exclusiva con territorio protegido.</p>
+            <p>Cuando las 5 plazas de tu zona se llenen, se acabaron. No hay lista de espera. No hay segunda oportunidad. O entras ahora o esperas a que alguien se vaya.</p>
+            <p>10 millones de seguidores. M&uacute;sica propia. Metodolog&iacute;a &uacute;nica. Comunidad en 6 pa&iacute;ses. Esto no es Zumba.</p>
+        </div>
+        <span class="ad-cta">Demuestra que tienes lo que hace falta &rarr;</span>
+    </div>
+
+    <div class="ad-block reveal">
+        <div class="ad-tag">05 &mdash; El Instructor Invisible</div>
+        <div class="ad-hook">&ldquo;Llevas a&ntilde;os dando clases y nadie sabe tu nombre. Ni tus alumnos te buscan en redes.&rdquo;</div>
+        <div class="ad-body">
+            <p>No tienes marca personal. No tienes presencia digital. Eres intercambiable. Ma&ntilde;ana te cambian por alguien m&aacute;s barato y ni te avisan.</p>
+            <p>Los instructores EVOLXION tienen su propia web con subdominio, contenido que les posiciona como referentes, una metodolog&iacute;a que nadie m&aacute;s tiene y una marca de 10 millones de seguidores detr&aacute;s.</p>
+            <p>T&uacute; decides: seguir siendo invisible o construir algo con tu nombre.</p>
+        </div>
+        <span class="ad-cta">Responde el quiz y empieza &rarr;</span>
+    </div>
+
+    <h3 style="font-family:'Playfair Display',serif;font-size:14px;font-weight:600;color:var(--gold);margin:36px 0 16px" class="reveal">Clientes Membres&iacute;a &mdash; 5 variantes</h3>
+
+    <div class="ad-block reveal">
+        <div class="ad-tag">01 &mdash; El Castigo</div>
+        <div class="ad-hook">&ldquo;Tu entrenamiento es un castigo. Y lo sabes. Cada minuto se te hace eterno. Y al final siempre pasa lo mismo: lo dejas.&rdquo;</div>
+        <div class="ad-body">
+            <p>No es que no quieras cuidarte. Es que lo que haces no te engancha. No te emociona. No te hace sentir viva. Por eso lo dejas una y otra vez.</p>
+            <p>EVOLXION fusiona baile y fitness para que estar en forma sea la mejor parte de tu d&iacute;a. Sudas, bailas, te llenas de energ&iacute;a &mdash; y no quieres parar. Desde tu casa. Con m&uacute;sica original. Con una comunidad de 12 pa&iacute;ses.</p>
+            <p>$100 al a&ntilde;o. Menos de 30 c&eacute;ntimos al d&iacute;a. Garant&iacute;a 7 d&iacute;as. Si no te engancha, te devolvemos tu dinero.</p>
+        </div>
+        <span class="ad-cta">Descubre si EVOLXION es para ti &rarr;</span>
+    </div>
+
+    <div class="ad-block reveal">
+        <div class="ad-tag">02 &mdash; El Patr&oacute;n</div>
+        <div class="ad-hook">&ldquo;Empezar y dejarlo. Empezar y dejarlo. Empezar y dejarlo. Ese es tu patr&oacute;n. Y cada vez te sientes peor.&rdquo;</div>
+        <div class="ad-body">
+            <p>No te falta motivaci&oacute;n. No te falta fuerza de voluntad. Lo que te falta es algo tan adictivo que el problema sea NO ir. Algo que te haga sentir tan bien que lo eches de menos cuando no lo haces.</p>
+            <p>Eso es EVOLXION Experience. Bailas, sudas, te conectas contigo misma. Y no quieres parar. Nunca. Personas de Espa&ntilde;a, M&eacute;xico, Argentina, Alemania y Francia ya est&aacute;n dentro.</p>
+            <p>Por menos de lo que cuesta un caf&eacute; a la semana. Sin compromiso. Cancela cuando quieras.</p>
+        </div>
+        <span class="ad-cta">Rompe el patr&oacute;n hoy &rarr;</span>
+    </div>
+
+    <div class="ad-block reveal">
+        <div class="ad-tag">03 &mdash; Te Has Olvidado de Ti</div>
+        <div class="ad-hook">&ldquo;&iquest;Cu&aacute;ndo fue la &uacute;ltima vez que hiciste algo solo para ti? Sin pensar en nadie m&aacute;s. Sin sentir culpa.&rdquo;</div>
+        <div class="ad-body">
+            <p>Entre el trabajo, los hijos, la casa y las mil cosas del d&iacute;a... te has olvidado de ti. Y se nota. En tu energ&iacute;a. En tu &aacute;nimo. En c&oacute;mo te ves al espejo. En c&oacute;mo te sientes cuando te acuestas.</p>
+            <p>EVOLXION es TU espacio. 30 minutos para reconectar con tu cuerpo, tu energ&iacute;a y tu autoestima. Sin filtros. Sin perfecci&oacute;n. Sin juicio. Solo t&uacute;, la m&uacute;sica y el movimiento.</p>
+            <p>M&aacute;s de 10 millones de personas siguen esta comunidad. $100 al a&ntilde;o. Acceso inmediato.</p>
+        </div>
+        <span class="ad-cta">Empieza hoy. No ma&ntilde;ana. Hoy. &rarr;</span>
+    </div>
+
+    <div class="ad-block reveal">
+        <div class="ad-tag">04 &mdash; No Es Fitness</div>
+        <div class="ad-hook">&ldquo;Esto no es fitness. Esto no es una clase. Esto es lo que pasa cuando dejas de obligarte y empiezas a disfrutar.&rdquo;</div>
+        <div class="ad-body">
+            <p>El gimnasio es una obligaci&oacute;n. Las pesas son aburridas. Correr es un castigo. Y t&uacute; lo sabes porque llevas a&ntilde;os intentando que te guste y no te gusta.</p>
+            <p>EVOLXION Experience es diferente. Bailas con m&uacute;sica original. Sudas sin darte cuenta. Te llenas de energ&iacute;a. Y cuando terminas, quieres m&aacute;s. No menos. M&aacute;s.</p>
+            <p>M&eacute;todo EVOLXION BURN: tu cuerpo sigue quemando calor&iacute;as 24 horas despu&eacute;s. Sesiones ilimitadas. Comunidad internacional. $100/a&ntilde;o.</p>
+        </div>
+        <span class="ad-cta">Pru&eacute;balo 7 d&iacute;as sin riesgo &rarr;</span>
+    </div>
+
+    <div class="ad-block reveal">
+        <div class="ad-tag">05 &mdash; La Excusa del Tiempo</div>
+        <div class="ad-hook">&ldquo;No tengo tiempo. Esa es tu excusa favorita. Pero tienes 30 minutos para Netflix cada noche.&rdquo;</div>
+        <div class="ad-body">
+            <p>No es tiempo lo que te falta. Es algo que merezca la pena. Algo que en 30 minutos te haga sentir m&aacute;s viva que 2 horas en el gimnasio.</p>
+            <p>EVOLXION Experience. Desde tu casa. A tu hora. Sin desplazamientos. Sin excusas. Bailas, sudas, te activas &mdash; y sigues con tu d&iacute;a con una energ&iacute;a que no ten&iacute;as.</p>
+            <p>Mujeres de 12 pa&iacute;ses ya lo hacen. Cada d&iacute;a. Porque es tan adictivo que el problema es NO hacerlo. 0,27&euro; al d&iacute;a.</p>
+        </div>
+        <span class="ad-cta">Descubre tu experiencia &rarr;</span>
+    </div>
+
+    <div class="notes-box reveal">
+        <h4>Notas para Meta Ads Manager</h4>
+        <p><strong>Segmentaci&oacute;n Instructores:</strong> Audiencia personalizada de seguidores de EVOLXION en todas las plataformas + Lookalike 1% de los que ya han comprado la formaci&oacute;n. Intereses: instructor fitness, Zumba, baile, emprendimiento fitness.<br><br>
+        <strong>Segmentaci&oacute;n Clientes:</strong> Audiencia personalizada de seguidores + Lookalike 1%. Mujeres 30-55. Intereses: fitness en casa, baile, bienestar, yoga, p&eacute;rdida de peso.<br><br>
+        <strong>Formato recomendado:</strong> V&iacute;deo vertical 9:16 (Reels/Stories) con los primeros 3 seg del hook hablado + subt&iacute;tulos grandes. Tambi&eacute;n probar imagen est&aacute;tica con el hook como texto grande sobre foto de clase.<br><br>
+        <strong>Presupuesto inicial:</strong> 5&euro;/d&iacute;a por variante durante 5 d&iacute;as. Matar las que no pasen de 2% CTR. Escalar las ganadoras a 20&euro;/d&iacute;a.<br><br>
+        <strong>Objetivo de campa&ntilde;a:</strong> Conversiones (quiz completado). No tr&aacute;fico. No alcance. Conversiones.</p>
+    </div>
+</div>
+</section>
+
+<!-- 09 GRABACI&Oacute;N -->
+<section class="section">
+<div class="container">
+    <div class="reveal"><div class="section-num">09 &mdash; Grabaci&oacute;n</div>
+    <h2 class="section-title">Lo Que Roudy Tiene Que Grabar (Priorizado)</h2></div>
+
+    <div class="grid">
+        <div class="card reveal">
+            <div class="card-title" style="color:var(--red)">Primero (esta semana)</div>
+            <ul class="checklist">
+                <li>VSL Instructor: 3 min en la sala, sudando, con energ&iacute;a</li>
+                <li>3 hooks diferentes de 15 seg (para A/B en Meta)</li>
+                <li>B-roll de clase real con m&aacute;xima energ&iacute;a (m&iacute;nimo 2 min)</li>
+                <li>Clip de 15 seg diciendo &ldquo;&iquest;Te gustar&iacute;a ser instructor de EVOLXION?&rdquo;</li>
+            </ul>
+        </div>
+        <div class="card reveal">
+            <div class="card-title" style="color:var(--orange)">Despu&eacute;s (semana 2)</div>
+            <ul class="checklist">
+                <li>VSL Cliente: 3:15 min (Roudy movi&eacute;ndose, no quieto)</li>
+                <li>Testimonios de 2-3 instructores actuales (30 seg cada uno)</li>
+                <li>Clip de clase cortado a la mitad (&ldquo;&iquest;La quieres entera? Enlace abajo&rdquo;)</li>
+                <li>Before/After emocional de alumnos (no f&iacute;sico, emocional)</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- 10 AUDITOR&Iacute;A WEB -->
+<section class="section">
+<div class="container">
+    <div class="reveal"><div class="section-num">10 &mdash; Auditor&iacute;a Web</div>
+    <h2 class="section-title">experience.evolxion.com &mdash; Estado Actual</h2></div>
+
+    <table class="tbl reveal">
+        <thead><tr><th>Elemento</th><th>Estado</th><th>Acci&oacute;n</th></tr></thead>
+        <tbody>
+            <tr><td>Landing Cliente</td><td style="color:var(--green)">Existe</td><td>A&ntilde;adir quiz + Content Locker + m&aacute;s clips de clase</td></tr>
+            <tr><td>Landing Instructor</td><td style="color:var(--red)">No existe</td><td>Crear con VSL de Roudy</td></tr>
+            <tr><td>VSL Cliente</td><td style="color:var(--orange)">Existe (Elena)</td><td>Regrabar con Roudy como cara + clips de clase</td></tr>
+            <tr><td>VSL Instructor</td><td style="color:var(--red)">No existe</td><td>Grabar con gui&oacute;n de arriba</td></tr>
+            <tr><td>Quiz Page</td><td style="color:var(--red)">No existe</td><td>Crear 2 (instructor + cliente)</td></tr>
+            <tr><td>CRM</td><td style="color:var(--red)">No conectado</td><td>GoHighLevel &mdash; pipeline autom&aacute;tico</td></tr>
+            <tr><td>Bot WhatsApp</td><td style="color:var(--red)">No existe</td><td>Seguimiento + urgencia + agenda</td></tr>
+            <tr><td>Anuncios Meta</td><td style="color:var(--red)">0&euro; invertidos</td><td>Lanzar con copies de este doc</td></tr>
+            <tr><td>Financiaci&oacute;n</td><td style="color:var(--red)">No disponible</td><td>Pagos fraccionados (15-20&euro;/mes)</td></tr>
+            <tr><td>Web por instructor</td><td style="color:var(--red)">No implementada</td><td>Template GHL + subdominio</td></tr>
+            <tr><td>Content Locker</td><td style="color:var(--red)">No activo</td><td>Activar en ambas landings</td></tr>
+        </tbody>
+    </table>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+<div class="container reveal">
+    <h2 class="section-title" style="text-align:center;margin-bottom:12px">Siguiente Paso</h2>
+    <p style="text-align:center;color:var(--muted);margin-bottom:36px;font-size:14px">Grabar VSL, montar embudos, conectar CRM y lanzar anuncios a la audiencia propia.</p>
+    <a href="https://focusconsultor.com" target="_blank" class="cta-btn">Agendar Sesi&oacute;n en Focus Consultor</a>
+</div>
+</section>
+
+<footer>
+<div class="container">
+    <p><a href="https://focusconsultor.com" target="_blank">FOCUS Consulting Group</a> &middot; Adri&aacute;n Lucena &middot; Documento confidencial</p>
+</div>
+</footer>
 
 <script>
-window.addEventListener('scroll',()=>{const s=document.body.scrollTop||document.documentElement.scrollTop;const h=document.documentElement.scrollHeight-document.documentElement.clientHeight;document.getElementById('pb').style.width=(s/h)*100+'%'});
-const pc=document.getElementById('pt');for(let i=0;i<18;i++){const p=document.createElement('div');p.className='p';p.style.left=Math.random()*100+'%';p.style.animationDelay=Math.random()*8+'s';p.style.animationDuration=(6+Math.random()*5)+'s';pc.appendChild(p)}
-const els=document.querySelectorAll('.rv,.rl,.rr,.rs');const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('a')})},{threshold:.08,rootMargin:'0px 0px -30px 0px'});els.forEach(el=>obs.observe(el));
-const bars=document.querySelectorAll('.bar');const fObs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)bars.forEach((b,i)=>setTimeout(()=>b.classList.add('a'),i*100))})},{threshold:.25});const fc=document.getElementById('fBars');if(fc)fObs.observe(fc);
+// Reveal on scroll
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+document.querySelectorAll('.reveal, .funnel-step').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
